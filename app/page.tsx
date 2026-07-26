@@ -1,5 +1,13 @@
+import Link from "next/link";
+import { SiteFooter, SiteHeader } from "../components/site-chrome";
+import {
+  getDateKeyInTimeZone,
+  getObservanceForDate,
+  isValidDateKey,
+} from "../lib/liturgical-calendar";
+
 const upcoming = [
-  { day: "26", month: "JUL", name: "Saints Joachim and Anne", rank: "Memorial" },
+  { day: "26", month: "JUL", name: "Seventeenth Sunday in Ordinary Time", rank: "Sunday" },
   { day: "29", month: "JUL", name: "Saints Martha, Mary and Lazarus", rank: "Memorial" },
   { day: "31", month: "JUL", name: "Saint Ignatius of Loyola", rank: "Memorial" },
 ];
@@ -11,27 +19,70 @@ const devotions = [
     copy: "Nine days of prayer preparing for the Solemnity of the Assumption of the Blessed Virgin Mary.",
   },
   {
-    eyebrow: "Begins August 13",
+    eyebrow: "Begins August 18",
     title: "Saint Monica Novena",
     copy: "Pray with Saint Monica for loved ones who are far from the faith and for the grace of perseverance.",
   },
 ];
 
-export default function Home() {
+interface HomeProps {
+  searchParams: Promise<QueryParameters>;
+}
+
+type QueryParameters =
+  | Record<string, string | string[] | undefined>
+  | { get(name: string): string | null };
+
+function getQueryValue(query: QueryParameters, key: string): string | undefined {
+  if ("get" in query && typeof query.get === "function") {
+    return query.get(key) ?? undefined;
+  }
+  const value = query[key];
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function formatDate(dateKey: string) {
+  const date = new Date(`${dateKey}T12:00:00Z`);
+  return {
+    weekday: new Intl.DateTimeFormat("en-US", { weekday: "long", timeZone: "UTC" })
+      .format(date)
+      .toUpperCase(),
+    day: new Intl.DateTimeFormat("en-US", { day: "2-digit", timeZone: "UTC" }).format(date),
+    monthYear: new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(date).toUpperCase(),
+  };
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const query = await searchParams;
+  const requestedDateValue = getQueryValue(query, "date");
+  const requestedDate = requestedDateValue && isValidDateKey(requestedDateValue)
+    ? requestedDateValue
+    : null;
+  const previewMode = getQueryValue(query, "preview") === "1";
+  const dateKey = requestedDate ?? getDateKeyInTimeZone(new Date());
+  const date = formatDate(dateKey);
+  const observance = getObservanceForDate(dateKey, {
+    includePrivatePreview: previewMode,
+  });
+  const detailUrl = observance
+    ? previewMode
+      ? `/preview/saints/${observance.slug}`
+      : `/saints/${observance.slug}`
+    : null;
+
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="CatholicYou home">
-          <span className="brand-mark" aria-hidden="true">✦</span>
-          <span>Catholic<span className="brand-dot">.</span>You</span>
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="#today">Today</a>
-          <a href="#calendar">Calendar</a>
-          <a href="#novena">Novenas</a>
-          <a className="nav-cta" href="#subscribe">Get daily reminders</a>
-        </nav>
-      </header>
+      <SiteHeader />
+
+      {previewMode && observance ? (
+        <div className="preview-banner" role="status">
+          Private editorial preview · Fact-checked · Awaiting human review
+        </div>
+      ) : null}
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -39,28 +90,50 @@ export default function Home() {
           <h1>Meet the saints.<br /><em>Keep the feasts.</em></h1>
           <p className="hero-lede">
             A quiet, trustworthy companion for the Catholic year—saints,
-            solemnities, and novenas delivered when they matter.
+            solemnities, and novenas presented with care.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#today">Discover today’s saint</a>
+            {detailUrl ? (
+              <Link className="button button-primary" href={detailUrl}>Discover today’s saint</Link>
+            ) : (
+              <Link className="button button-primary" href="/?date=2026-07-25&preview=1">
+                Preview our first researched entry
+              </Link>
+            )}
             <a className="text-link" href="#calendar">Explore the calendar <span>→</span></a>
           </div>
         </div>
-        <div className="today-card" id="today">
+
+        <div className={`today-card ${observance ? "" : "today-card-empty"}`} id="today">
           <div className="card-date">
-            <span>FRIDAY</span>
-            <strong>25</strong>
-            <span>JULY 2026</span>
+            <span>{date.weekday}</span>
+            <strong>{date.day}</strong>
+            <span>{date.monthYear}</span>
           </div>
           <div className="card-content">
-            <p className="card-label">Feast of the day</p>
-            <h2>Saint James<br />the Apostle</h2>
-            <p className="card-meta">Apostle · Martyr · Patron of pilgrims</p>
-            <blockquote>
-              “Whoever wishes to be great among you shall be your servant.”
-              <cite>— Matthew 20:26</cite>
-            </blockquote>
-            <a href="#about-james">Read his story <span>→</span></a>
+            {observance ? (
+              <>
+                <p className="card-label">{observance.observance.rank} of the day</p>
+                <h2>{observance.shortTitle}<br />the Apostle</h2>
+                <p className="card-meta">{observance.descriptor}</p>
+                <blockquote>
+                  “Whoever wishes to be great among you shall be your servant.”
+                  <cite>— Matthew 20:26</cite>
+                </blockquote>
+                <Link href={detailUrl ?? "#"}>Read the sourced story <span>→</span></Link>
+              </>
+            ) : (
+              <>
+                <p className="card-label">The calendar is growing</p>
+                <h2>No reviewed entry<br />for this date yet</h2>
+                <p className="card-meta">Quality before quantity</p>
+                <p className="empty-card-copy">
+                  CatholicYou will show an observance here only after its sources,
+                  calendar scope, and editorial status have been verified.
+                </p>
+                <Link href="/?date=2026-07-25&preview=1">Preview Saint James <span>→</span></Link>
+              </>
+            )}
           </div>
           <div className="sunburst" aria-hidden="true" />
         </div>
@@ -72,29 +145,43 @@ export default function Home() {
         <span>Respectfully written</span>
       </section>
 
-      <section className="story section-shell" id="about-james">
-        <div className="section-heading">
-          <p className="kicker">Today in the Church</p>
-          <h2>A faith worth walking for</h2>
-        </div>
-        <div className="story-grid">
-          <p className="drop-cap">
-            James, the son of Zebedee and brother of John, was among the first
-            disciples called by Jesus. Scripture places him at the
-            Transfiguration and in Gethsemane, close to Christ at moments of
-            glory and anguish.
-          </p>
-          <p>
-            Tradition remembers him as the first of the Twelve to suffer
-            martyrdom. For centuries, pilgrims have walked the Camino de
-            Santiago in his honor—a long road that turns every step into prayer.
-          </p>
-          <aside>
-            <span>For prayer today</span>
-            <p>Ask for the courage to follow Christ generously, especially when the road is difficult.</p>
-          </aside>
-        </div>
-      </section>
+      {observance ? (
+        <section className="story section-shell" id="about-james">
+          <div className="section-heading">
+            <p className="kicker">A researched entry</p>
+            <h2>{observance.theme}</h2>
+          </div>
+          <div className="story-grid">
+            <p className="drop-cap">{observance.summary}</p>
+            <p>{observance.sections[1]?.paragraphs[1]}</p>
+            <aside>
+              <span>For prayer today</span>
+              <p>{observance.prayerPrompt}</p>
+            </aside>
+          </div>
+          <a className="story-cta" href={detailUrl ?? "#"}>
+            Read the complete entry and its sources <span>→</span>
+          </a>
+        </section>
+      ) : (
+        <section className="quality-section section-shell">
+          <div className="section-heading">
+            <p className="kicker">How CatholicYou is being built</p>
+            <h2>A smaller calendar we can stand behind.</h2>
+          </div>
+          <div className="quality-grid">
+            <p>
+              We are beginning with individual, sourced entries rather than
+              filling the calendar with automatically generated biographies.
+            </p>
+            <p>
+              Scripture, documented history, later tradition, and devotional
+              reflection are labeled separately. Human review remains a
+              requirement for publication.
+            </p>
+          </div>
+        </section>
+      )}
 
       <section className="calendar-section" id="calendar">
         <div className="section-shell">
@@ -151,11 +238,7 @@ export default function Home() {
         </form>
       </section>
 
-      <footer>
-        <a className="brand" href="#top"><span className="brand-mark">✦</span>Catholic<span className="brand-dot">.</span>You</a>
-        <p>A companion for living the Catholic year.</p>
-        <p>© 2026 Catholic.You</p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
