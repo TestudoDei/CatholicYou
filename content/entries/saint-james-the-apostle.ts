@@ -10,9 +10,17 @@ export const saintJamesTheApostle = {
   descriptor: "Apostle · Martyr",
   summary:
     "James, the son of Zebedee and brother of John, followed Jesus from the fishing boat to the Transfiguration, Gethsemane, and ultimately martyrdom.",
-  theme: "From ambition to self-giving",
+  theme: "A faith worth walking for",
   prayerPrompt:
-    "Ask for the grace to follow Christ generously, to accept correction humbly, and to remain faithful when discipleship becomes costly.",
+    "Ask for the courage to follow Christ generously, especially when the road is difficult.",
+  preview: {
+    origin:
+      "James, the son of Zebedee and brother of John, was among the first disciples called by Jesus.",
+    livedWitness:
+      "Scripture places him at the Transfiguration and in Gethsemane, close to Christ at moments of glory and anguish.",
+    enduringRelevance:
+      "Among the Twelve, James is the first whose martyrdom is recorded in the New Testament. For centuries, pilgrims have walked the Camino de Santiago in his honor—a long road that turns every step into prayer.",
+  },
   observance: {
     month: 7,
     day: 25,

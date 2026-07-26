@@ -29,7 +29,12 @@ test("renders the private Saint James homepage preview from structured content",
 
   const html = await response.text();
   assert.match(html, /Saint James/);
-  assert.match(html, /From ambition to self-giving/);
+  assert.match(html, /A faith worth walking for/);
+  assert.match(html, /among the first disciples called by Jesus/);
+  assert.match(html, /Transfiguration and in Gethsemane/);
+  assert.match(html, /Camino de Santiago/);
+  assert.match(html, /every step into prayer/);
+  assert.doesNotMatch(html, /This failure is not incidental/);
   assert.match(html, /Private editorial preview/);
   assert.match(html, /preview\/saints\/saint-james-the-apostle/);
 });

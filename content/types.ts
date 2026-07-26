@@ -60,6 +60,12 @@ export interface LiturgicalObservance {
   scopes: readonly CalendarScope[];
 }
 
+export interface EditorialPreview {
+  origin: string;
+  livedWitness: string;
+  enduringRelevance: string;
+}
+
 export interface ContentEntry {
   id: string;
   kind: ContentKind;
@@ -71,6 +77,7 @@ export interface ContentEntry {
   summary: string;
   theme: string;
   prayerPrompt: string;
+  preview: EditorialPreview;
   observance: LiturgicalObservance;
   scriptureReferences: readonly {
     citation: string;

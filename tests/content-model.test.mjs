@@ -29,6 +29,20 @@ test("does not expose fact-checked content as published", () => {
   assert.equal(getEntryBySlug("saint-james-the-apostle"), undefined);
 });
 
+test("gives every saint preview a complete narrative arc", () => {
+  const preview = getEntryBySlug("saint-james-the-apostle", {
+    includePrivatePreview: true,
+  });
+  assert.ok(preview);
+  assert.match(preview.preview.origin, /son of Zebedee/);
+  assert.match(preview.preview.livedWitness, /Transfiguration/);
+  assert.match(preview.preview.enduringRelevance, /Camino de Santiago/);
+  assert.doesNotMatch(
+    `${preview.preview.origin} ${preview.preview.livedWitness} ${preview.preview.enduringRelevance}`,
+    /^(this|that|these|those)\b/i,
+  );
+});
+
 test("selects Saint James by month and day only for private preview", () => {
   assert.equal(getObservanceForDate("2026-07-25"), undefined);
   assert.equal(

@@ -17,6 +17,18 @@ Each transition is explicit. An entry cannot be publicly visible unless it has r
 
 Every substantive section lists the sources that support it. Sources record their publisher, URL or bibliographic location, access date, and the reason they were used.
 
+## Homepage preview standard
+
+The homepage preview is written specifically for its limited space. It is not an excerpt cut from the full article.
+
+Each saint preview follows the same narrative sequence:
+
+1. **Origin:** who the saint was and how the story begins.
+2. **Lived witness:** why the saint mattered during his or her lifetime.
+3. **Enduring relevance:** how the saint's witness, devotion, or legacy speaks to Catholics now.
+
+The preview should normally use one sentence for origin, one for lived witness, and no more than two for enduring relevance. A separate prayer prompt turns the story toward reflection. Avoid context-dependent openings such as "this failure" or "this event"; every preview must stand on its own.
+
 ## Calendar scope
 
 An observance identifies both its liturgical rank and its scope. Initial scope values are the General Roman Calendar, the United States calendar, regional calendars, and local calendars. A future calendar engine must resolve precedence within a selected scope rather than assuming every observance applies identically everywhere.
