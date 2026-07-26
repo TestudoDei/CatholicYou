@@ -1,8 +1,12 @@
 import { saintJamesTheApostle } from "./entries/saint-james-the-apostle.ts";
+import { saintsJoachimAndAnne } from "./entries/saints-joachim-and-anne.ts";
 import { hasCompleteStoryArc } from "./story-arcs.ts";
 import type { ContentEntry, EditorialStatus } from "./types.ts";
 
-export const contentEntries: readonly ContentEntry[] = [saintJamesTheApostle];
+export const contentEntries: readonly ContentEntry[] = [
+  saintJamesTheApostle,
+  saintsJoachimAndAnne,
+];
 
 const editorialOrder: readonly EditorialStatus[] = [
   "draft",

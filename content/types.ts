@@ -81,6 +81,11 @@ export interface EditorialPreview {
   enduringRelevance: string;
 }
 
+export interface AtAGlanceFact {
+  label: string;
+  value: string;
+}
+
 export interface ContentEntry {
   id: string;
   kind: ContentKind;
@@ -93,6 +98,7 @@ export interface ContentEntry {
   theme: string;
   prayerPrompt: string;
   preview: EditorialPreview;
+  atAGlance: readonly AtAGlanceFact[];
   storyArc?: StoryArcAssignment;
   observance: LiturgicalObservance;
   scriptureReferences: readonly {

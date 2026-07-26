@@ -97,6 +97,29 @@ test("selects Saint James by month and day only for private preview", () => {
   );
 });
 
+test("lets Sunday take precedence over a saint feast or memorial", () => {
+  assert.equal(
+    getObservanceForDate("2026-07-26", { includePrivatePreview: true }),
+    undefined,
+  );
+  assert.equal(
+    getObservanceForDate("2027-07-26", { includePrivatePreview: true })?.slug,
+    "saints-joachim-and-anne",
+  );
+});
+
+test("keeps tradition explicit in the Joachim and Anne entry", () => {
+  const entry = getEntryBySlug("saints-joachim-and-anne", {
+    includePrivatePreview: true,
+  });
+  assert.ok(entry);
+  assert.equal(entry.storyArc?.primary, "hidden_faithfulness");
+  assert.deepEqual(getStoryArcIssues(entry), []);
+  assert.match(entry.sections[0]?.paragraphs[0] ?? "", /does not name her parents/);
+  assert.match(entry.sections[1]?.paragraphs[0] ?? "", /apocryphal Gospel of James/);
+  assert.equal(isPubliclyVisible(entry), false);
+});
+
 test("validates plain calendar dates without timezone coercion", () => {
   assert.equal(isValidDateKey("2026-07-25"), true);
   assert.equal(isValidDateKey("2026-02-29"), false);

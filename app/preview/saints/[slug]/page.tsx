@@ -9,6 +9,21 @@ interface SaintPageProps {
   params: Promise<{ slug: string }>;
 }
 
+function titleCase(value: string) {
+  return value
+    .split("_")
+    .map((part) => `${part[0]?.toUpperCase()}${part.slice(1)}`)
+    .join(" ");
+}
+
+function formatMonthDay(month: number, day: number) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(2026, month - 1, day)));
+}
+
 export async function generateMetadata({ params }: SaintPageProps): Promise<Metadata> {
   const { slug } = await params;
   const entry = getEntryBySlug(slug, { includePrivatePreview: true });
@@ -41,20 +56,25 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
       <article className="saint-profile">
         <header className="saint-hero">
           <div className="saint-hero-inner">
-            <Link className="breadcrumb" href="/?date=2026-07-25&preview=1">← Back to July 25</Link>
+            <Link className="breadcrumb" href="/">← Back to CatholicYou</Link>
             <div className="saint-hero-grid">
               <div>
-                <p className="kicker">July 25 · Feast · Red</p>
+                <p className="kicker">
+                  {formatMonthDay(entry.observance.month, entry.observance.day)}
+                  {" · "}
+                  {titleCase(entry.observance.rank)}
+                  {" · Liturgical color: "}
+                  {titleCase(entry.observance.color)}
+                </p>
                 <h1>{entry.title}</h1>
                 <p className="saint-deck">{entry.summary}</p>
               </div>
               <aside className="identity-card" aria-label="Entry summary">
                 <p className="card-label">At a glance</p>
                 <dl>
-                  <div><dt>Known as</dt><dd>{entry.alternateNames.join("; ")}</dd></div>
-                  <div><dt>In Scripture</dt><dd>Son of Zebedee; brother of John</dd></div>
-                  <div><dt>Witness</dt><dd>Apostle and martyr</dd></div>
-                  <div><dt>Calendar</dt><dd>General Roman; United States</dd></div>
+                  {entry.atAGlance.map((fact) => (
+                    <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+                  ))}
                   {storyArc ? <div><dt>Story arc</dt><dd>{storyArc.label}</dd></div> : null}
                 </dl>
               </aside>

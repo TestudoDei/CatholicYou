@@ -42,11 +42,19 @@ export function getObservanceForDate(
 ): ContentEntry | undefined {
   if (!isValidDateKey(dateKey)) return undefined;
 
-  const [, , month, day] = DATE_KEY_PATTERN.exec(dateKey) ?? [];
+  const [, year, month, day] = DATE_KEY_PATTERN.exec(dateKey) ?? [];
+  const isSunday =
+    new Date(Date.UTC(Number(year), Number(month) - 1, Number(day))).getUTCDay() === 0;
+
   return contentEntries.find(
     (entry) =>
       entry.observance.month === Number(month) &&
       entry.observance.day === Number(day) &&
+      !(
+        isSunday &&
+        entry.kind === "saint" &&
+        entry.observance.rank !== "solemnity"
+      ) &&
       (options.includePrivatePreview || isPubliclyVisible(entry)),
   );
 }

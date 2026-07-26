@@ -114,7 +114,7 @@ export default async function Home({ searchParams }: HomeProps) {
             {observance ? (
               <>
                 <p className="card-label">{observance.observance.rank} of the day</p>
-                <h2>{observance.shortTitle}<br />the Apostle</h2>
+                <h2>{observance.title}</h2>
                 <p className="card-meta">{observance.descriptor}</p>
                 <blockquote>
                   “Whoever wishes to be great among you shall be your servant.”
@@ -148,7 +148,7 @@ export default async function Home({ searchParams }: HomeProps) {
       {observance ? (
         <section className="story section-shell" id="about-james">
           <div className="section-heading">
-            <p className="kicker">A researched entry</p>
+            <p className="kicker">Today in the Church</p>
             <h2>{observance.theme}</h2>
           </div>
           <div className="story-grid">

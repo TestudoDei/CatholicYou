@@ -44,6 +44,7 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
   assert.equal(privateResponse.status, 200);
   const html = await privateResponse.text();
 
+  assert.match(html, /Liturgical color:.*Red/);
   assert.match(html, /Called into the company of Jesus/);
   assert.match(html, /An ambition corrected by the Gospel/);
   assert.match(html, /Documented history/);
@@ -56,6 +57,35 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
 
   const publicResponse = await render("/saints/saint-james-the-apostle");
   assert.equal(publicResponse.status, 404);
+});
+
+test("renders Joachim and Anne with explicit evidence boundaries", async () => {
+  const privateResponse = await render("/preview/saints/saints-joachim-and-anne");
+  assert.equal(privateResponse.status, 200);
+  const html = await privateResponse.text();
+
+  assert.match(html, /Saints Joachim and Anne/);
+  assert.match(html, /Liturgical color:.*White/);
+  assert.match(html, /A silence that asks for honesty/);
+  assert.match(html, /Names carried by ancient Christian tradition/);
+  assert.match(html, /apocryphal Gospel of James/);
+  assert.match(html, /Hidden faithfulness/);
+  assert.match(html, /grandparents and elders who feel forgotten/i);
+
+  const publicResponse = await render("/saints/saints-joachim-and-anne");
+  assert.equal(publicResponse.status, 404);
+});
+
+test("previews Joachim and Anne only when the memorial is not displaced", async () => {
+  const sundayResponse = await render("/?date=2026-07-26&preview=1");
+  const sundayHtml = await sundayResponse.text();
+  assert.doesNotMatch(sundayHtml, /The faith handed on at home/);
+
+  const weekdayResponse = await render("/?date=2027-07-26&preview=1");
+  const weekdayHtml = await weekdayResponse.text();
+  assert.match(weekdayHtml, /The faith handed on at home/);
+  assert.match(weekdayHtml, /Saints Joachim and Anne/);
+  assert.doesNotMatch(weekdayHtml, /the Apostle/);
 });
 
 test("keeps CatholicYou metadata and removes starter markers", async () => {
