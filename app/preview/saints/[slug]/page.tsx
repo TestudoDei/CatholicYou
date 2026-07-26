@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter, SiteHeader } from "../../../../components/site-chrome";
 import { getEntryBySlug } from "../../../../content";
+import { getStoryArcDefinition } from "../../../../content/story-arcs";
 
 interface SaintPageProps {
   params: Promise<{ slug: string }>;
@@ -25,6 +26,10 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
   const entry = getEntryBySlug(slug, { includePrivatePreview: true });
 
   if (!entry) notFound();
+
+  const storyArc = entry.storyArc
+    ? getStoryArcDefinition(entry.storyArc.primary)
+    : null;
 
   return (
     <main>
@@ -50,6 +55,7 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
                   <div><dt>In Scripture</dt><dd>Son of Zebedee; brother of John</dd></div>
                   <div><dt>Witness</dt><dd>Apostle and martyr</dd></div>
                   <div><dt>Calendar</dt><dd>General Roman; United States</dd></div>
+                  {storyArc ? <div><dt>Story arc</dt><dd>{storyArc.label}</dd></div> : null}
                 </dl>
               </aside>
             </div>

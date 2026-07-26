@@ -21,6 +21,11 @@ export const saintJamesTheApostle = {
     enduringRelevance:
       "Among the Twelve, James is the first whose martyrdom is recorded in the New Testament. For centuries, pilgrims have walked the Camino de Santiago in his honor—a long road that turns every step into prayer.",
   },
+  storyArc: {
+    primary: "correction_and_transformation",
+    rationale:
+      "The Gospels record James's privileged witness and his desire for honor, Christ's correction toward service, and Acts records his later fidelity unto martyrdom.",
+  },
   observance: {
     month: 7,
     day: 25,

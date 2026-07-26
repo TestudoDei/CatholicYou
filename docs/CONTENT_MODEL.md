@@ -29,6 +29,14 @@ Each saint preview follows the same narrative sequence:
 
 The preview should normally use one sentence for origin, one for lived witness, and no more than two for enduring relevance. A separate prayer prompt turns the story toward reflection. Avoid context-dependent openings such as "this failure" or "this event"; every preview must stand on its own.
 
+## Complete-story standard
+
+Every saint entry names one primary story arc and may name one distinct secondary arc. The evidence determines the arc; an editor must never select an appealing narrative first and bend the saint's life to fit it.
+
+The arc guides the order and emphasis of the complete story without replacing editorial judgment. All complete stories still require historical or scriptural grounding, proportionate treatment of tradition, spiritual movement, enduring relevance, an invitation to prayer, and a reviewable source record.
+
+See [Editorial story arcs](./EDITORIAL_STORY_ARCS.md) for the available arcs, section sequences, and selection rules.
+
 ## Calendar scope
 
 An observance identifies both its liturgical rank and its scope. Initial scope values are the General Roman Calendar, the United States calendar, regional calendars, and local calendars. A future calendar engine must resolve precedence within a selected scope rather than assuming every observance applies identically everywhere.

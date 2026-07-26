@@ -1,4 +1,5 @@
 import { saintJamesTheApostle } from "./entries/saint-james-the-apostle.ts";
+import { hasCompleteStoryArc } from "./story-arcs.ts";
 import type { ContentEntry, EditorialStatus } from "./types.ts";
 
 export const contentEntries: readonly ContentEntry[] = [saintJamesTheApostle];
@@ -21,7 +22,8 @@ export function isPubliclyVisible(entry: ContentEntry): boolean {
   return (
     entry.editorial.status === "published" &&
     entry.editorial.humanReviewedAt !== null &&
-    entry.editorial.humanReviewedBy !== null
+    entry.editorial.humanReviewedBy !== null &&
+    hasCompleteStoryArc(entry)
   );
 }
 

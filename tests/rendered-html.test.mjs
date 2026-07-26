@@ -50,6 +50,8 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
   assert.match(html, /Later traditions connect James/);
   assert.match(html, /Sources and review status/);
   assert.match(html, /Awaiting human review/);
+  assert.match(html, /Story arc/);
+  assert.match(html, /Correction and transformation/);
   assert.match(html, /General Audience: James, the Greater/);
 
   const publicResponse = await render("/saints/saint-james-the-apostle");

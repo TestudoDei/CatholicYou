@@ -6,6 +6,11 @@ import {
   isPubliclyVisible,
 } from "../content/index.ts";
 import {
+  getStoryArcDefinition,
+  getStoryArcIssues,
+  storyArcDefinitions,
+} from "../content/story-arcs.ts";
+import {
   getDateKeyInTimeZone,
   getObservanceForDate,
   isValidDateKey,
@@ -40,6 +45,43 @@ test("gives every saint preview a complete narrative arc", () => {
   assert.doesNotMatch(
     `${preview.preview.origin} ${preview.preview.livedWitness} ${preview.preview.enduringRelevance}`,
     /^(this|that|these|those)\b/i,
+  );
+});
+
+test("assigns every saint a source-grounded complete-story arc", () => {
+  const entry = getEntryBySlug("saint-james-the-apostle", {
+    includePrivatePreview: true,
+  });
+  assert.ok(entry);
+  assert.deepEqual(getStoryArcIssues(entry), []);
+  assert.equal(entry.storyArc?.primary, "correction_and_transformation");
+  assert.match(entry.storyArc?.rationale ?? "", /Christ's correction/);
+
+  const definition = getStoryArcDefinition("correction_and_transformation");
+  assert.equal(definition.label, "Correction and transformation");
+  assert.deepEqual(definition.sequence.slice(0, 3), [
+    "Origin and calling",
+    "Early gifts or privileged witness",
+    "Documented misunderstanding, weakness, or misdirected desire",
+  ]);
+  assert.equal(Object.keys(storyArcDefinitions).length, 7);
+});
+
+test("rejects missing or duplicate saint story arcs", () => {
+  assert.deepEqual(
+    getStoryArcIssues({ kind: "saint", storyArc: undefined }),
+    ["Saint entries require a primary story arc."],
+  );
+  assert.deepEqual(
+    getStoryArcIssues({
+      kind: "saint",
+      storyArc: {
+        primary: "conversion",
+        secondary: "conversion",
+        rationale: "The documented conversion supplies the primary narrative movement.",
+      },
+    }),
+    ["A secondary story arc must differ from the primary arc."],
   );
 });
 

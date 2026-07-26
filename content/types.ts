@@ -24,6 +24,21 @@ export type SourceKind =
   | "liturgical_calendar"
   | "scholarly_reference";
 
+export type StoryArc =
+  | "correction_and_transformation"
+  | "conversion"
+  | "perseverance"
+  | "courageous_witness"
+  | "hidden_faithfulness"
+  | "service_and_self_gift"
+  | "intellectual_or_spiritual_discovery";
+
+export interface StoryArcAssignment {
+  primary: StoryArc;
+  secondary?: StoryArc;
+  rationale: string;
+}
+
 export interface ContentSource {
   id: string;
   kind: SourceKind;
@@ -78,6 +93,7 @@ export interface ContentEntry {
   theme: string;
   prayerPrompt: string;
   preview: EditorialPreview;
+  storyArc?: StoryArcAssignment;
   observance: LiturgicalObservance;
   scriptureReferences: readonly {
     citation: string;
