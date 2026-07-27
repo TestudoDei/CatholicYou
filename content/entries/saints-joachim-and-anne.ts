@@ -88,7 +88,7 @@ export const saintsJoachimAndAnne = {
     interpretation: {
       heading: "The reunion that artists made unforgettable",
       homepageNote:
-        "Dürer places the couple’s quiet embrace beneath a monumental gate, giving later Christian tradition a tender human center.",
+        "Dürer makes the traditional reunion vivid: beneath the city gate, Joachim and Anne embrace after learning that their prayer for a child has been heard.",
       paragraphs: [
         "Albrecht Dürer turns the traditional reunion of Joachim and Anne into a public moment of private tenderness. The city gate towers above them, witnesses crowd nearby, and yet the center of the woodcut is simply the aging couple’s embrace.",
         "The image belongs to Dürer’s Life of the Virgin series. It gives visual form to a later Christian tradition rather than to an event narrated in Scripture. That distinction does not weaken the work; it helps us see what generations of Christians found spiritually compelling in the story—the relief of a prayer heard, the fidelity of a marriage tested by waiting, and gratitude arriving before the future is fully known.",

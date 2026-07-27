@@ -15,6 +15,7 @@ CatholicYou is a calm, trustworthy companion for living the Catholic liturgical 
 
 ## Editorial
 
+- Before drafting or revising content, read `docs/EDITORIAL_GUIDE.md`, `docs/CONTENT_MODEL.md`, and `docs/EDITORIAL_STORY_ARCS.md`.
 - Do not invent quotations, patronages, miracles, dates, or historical details.
 - Distinguish Scripture, documented history, tradition, and private revelation.
 - Identify whether observances are universal, national, regional, or local.

@@ -100,6 +100,10 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
   assert.match(weekdayHtml, /The faith handed on at home/);
   assert.match(weekdayHtml, /Saints Joachim and Anne/);
   assert.match(weekdayHtml, /Sainte-Anne-de-Beaupré/);
+  assert.match(
+    weekdayHtml,
+    /beneath the city gate, Joachim and Anne embrace after learning that their prayer for a child has been heard/,
+  );
   assert.doesNotMatch(weekdayHtml, /the Apostle/);
 });
 
