@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FeaturedArtworkBlock } from "../components/featured-artwork";
 import { SiteFooter, SiteHeader } from "../components/site-chrome";
 import {
   getDateKeyInTimeZone,
@@ -164,6 +165,13 @@ export default async function Home({ searchParams }: HomeProps) {
           <a className="story-cta" href={detailUrl ?? "#"}>
             Read the complete entry and its sources <span>→</span>
           </a>
+          {observance.featuredArtwork ? (
+            <FeaturedArtworkBlock
+              artwork={observance.featuredArtwork}
+              detailUrl={detailUrl ?? undefined}
+              variant="homepage"
+            />
+          ) : null}
         </section>
       ) : (
         <section className="quality-section section-shell">

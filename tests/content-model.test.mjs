@@ -11,6 +11,11 @@ import {
   storyArcDefinitions,
 } from "../content/story-arcs.ts";
 import {
+  getArtworkEditorialScore,
+  hasPublicationReadyArtworkRights,
+  MAX_ARTWORK_EDITORIAL_SCORE,
+} from "../content/artwork.ts";
+import {
   getDateKeyInTimeZone,
   getObservanceForDate,
   isValidDateKey,
@@ -45,6 +50,34 @@ test("gives every saint preview a complete narrative arc", () => {
   assert.doesNotMatch(
     `${preview.preview.origin} ${preview.preview.distinctiveSignificance} ${preview.preview.livingDevotion}`,
     /^(this|that|these|those)\b/i,
+  );
+});
+
+test("records rights-cleared and ranked artwork for both pilot entries", () => {
+  for (const slug of [
+    "saint-james-the-apostle",
+    "saints-joachim-and-anne",
+  ]) {
+    const entry = getEntryBySlug(slug, { includePrivatePreview: true });
+    assert.ok(entry?.featuredArtwork);
+    assert.equal(hasPublicationReadyArtworkRights(entry.featuredArtwork), true);
+    const score = getArtworkEditorialScore(entry.featuredArtwork);
+    assert.ok(score >= 5);
+    assert.ok(score <= MAX_ARTWORK_EDITORIAL_SCORE);
+    assert.match(entry.featuredArtwork.imagePath, /^\/art\/.+\.jpg$/);
+    assert.match(entry.featuredArtwork.objectUrl, /^https:\/\/www\./);
+  }
+
+  const james = getEntryBySlug("saint-james-the-apostle", {
+    includePrivatePreview: true,
+  });
+  const joachimAndAnne = getEntryBySlug("saints-joachim-and-anne", {
+    includePrivatePreview: true,
+  });
+  assert.equal(getArtworkEditorialScore(james.featuredArtwork), 22);
+  assert.equal(
+    getArtworkEditorialScore(joachimAndAnne.featuredArtwork),
+    MAX_ARTWORK_EDITORIAL_SCORE,
   );
 });
 

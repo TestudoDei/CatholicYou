@@ -62,6 +62,48 @@ export const saintsJoachimAndAnne = {
       url: "https://bible.usccb.org/bible/readings/0726-memorial-joachim-anne.cfm",
     },
   ],
+  featuredArtwork: {
+    id: "joachim-anne-golden-gate",
+    title: "Joachim and Anna at the Golden Gate",
+    artist: "Albrecht Dürer",
+    date: "1504",
+    medium: "Woodcut on laid paper",
+    institution: "National Gallery of Art, Washington",
+    accessionNumber: "1943.3.3576",
+    imagePath: "/art/joachim-anne-golden-gate.jpg",
+    imageWidth: 2898,
+    imageHeight: 4096,
+    imageSourceUrl:
+      "https://api.nga.gov/iiif/91d5ab4f-c498-48a5-b14e-c48a6247e38f/full/full/0/default.jpg",
+    objectUrl:
+      "https://www.nga.gov/artworks/6694-joachim-and-anna-golden-gate",
+    alt:
+      "Albrecht Dürer woodcut showing Joachim and Anne embracing beneath an ornate city gate as onlookers gather around them.",
+    creditLine: "Rosenwald Collection",
+    rights: {
+      designation: "Public Domain",
+      policyUrl: "https://www.nga.gov/terms-and-notices",
+      verifiedAt: "2026-07-27",
+    },
+    interpretation: {
+      heading: "The reunion that artists made unforgettable",
+      homepageNote:
+        "Dürer places the couple’s quiet embrace beneath a monumental gate, giving later Christian tradition a tender human center.",
+      paragraphs: [
+        "Albrecht Dürer turns the traditional reunion of Joachim and Anne into a public moment of private tenderness. The city gate towers above them, witnesses crowd nearby, and yet the center of the woodcut is simply the aging couple’s embrace.",
+        "The image belongs to Dürer’s Life of the Virgin series. It gives visual form to a later Christian tradition rather than to an event narrated in Scripture. That distinction does not weaken the work; it helps us see what generations of Christians found spiritually compelling in the story—the relief of a prayer heard, the fidelity of a marriage tested by waiting, and gratitude arriving before the future is fully known.",
+      ],
+    },
+    editorialScores: {
+      storyRelevance: 5,
+      artisticSignificance: 5,
+      imageQuality: 5,
+      interpretiveRichness: 5,
+      audienceAppeal: 5,
+    },
+    weeklyFeatureNote:
+      "An exceptional weekly feature candidate: a major artist, an exact connection to the saints’ tradition, strong visual storytelling, and verified high-resolution public-domain media.",
+  },
   sections: [
     {
       id: "parents-of-mary",

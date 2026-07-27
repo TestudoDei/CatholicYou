@@ -34,6 +34,8 @@ test("renders the private Saint James homepage preview from structured content",
   assert.match(html, /Transfiguration and in Gethsemane/);
   assert.match(html, /Camino de Santiago/);
   assert.match(html, /every step into prayer/);
+  assert.match(html, /Manuscript Leaf with Saint James the Greater/);
+  assert.match(html, /Look more closely/);
   assert.doesNotMatch(html, /This failure is not incidental/);
   assert.match(html, /Private editorial preview/);
   assert.match(html, /preview\/saints\/saint-james-the-apostle/);
@@ -54,6 +56,9 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
   assert.match(html, /Story arc/);
   assert.match(html, /Correction and transformation/);
   assert.match(html, /General Audience: James, the Greater/);
+  assert.match(html, /James dressed for the road/);
+  assert.match(html, /View the museum record/);
+  assert.match(html, /Public Domain/);
 
   const publicResponse = await render("/saints/saint-james-the-apostle");
   assert.equal(publicResponse.status, 404);
@@ -74,6 +79,8 @@ test("renders Joachim and Anne through tradition and living devotion", async () 
   assert.match(html, /Louis Guimont/);
   assert.match(html, /Hidden faithfulness/);
   assert.match(html, /grandparents and elders who feel forgotten/i);
+  assert.match(html, /The reunion that artists made unforgettable/);
+  assert.match(html, /Albrecht Dürer/);
   assert.doesNotMatch(
     html,
     /A silence that asks for honesty|Scripture does not|does not name her parents|not through the canonical/i,

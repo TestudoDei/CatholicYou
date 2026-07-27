@@ -87,6 +87,43 @@ export interface AtAGlanceFact {
   value: string;
 }
 
+export type ArtworkEditorialScore = 1 | 2 | 3 | 4 | 5;
+
+export interface FeaturedArtwork {
+  id: string;
+  title: string;
+  artist: string;
+  date: string;
+  medium: string;
+  institution: string;
+  accessionNumber: string;
+  imagePath: string;
+  imageWidth: number;
+  imageHeight: number;
+  imageSourceUrl: string;
+  objectUrl: string;
+  alt: string;
+  creditLine: string;
+  rights: {
+    designation: "CC0" | "Public Domain";
+    policyUrl: string;
+    verifiedAt: string;
+  };
+  interpretation: {
+    heading: string;
+    homepageNote: string;
+    paragraphs: readonly string[];
+  };
+  editorialScores: {
+    storyRelevance: ArtworkEditorialScore;
+    artisticSignificance: ArtworkEditorialScore;
+    imageQuality: ArtworkEditorialScore;
+    interpretiveRichness: ArtworkEditorialScore;
+    audienceAppeal: ArtworkEditorialScore;
+  };
+  weeklyFeatureNote: string;
+}
+
 export interface ContentEntry {
   id: string;
   kind: ContentKind;
@@ -107,6 +144,7 @@ export interface ContentEntry {
     description: string;
     url: string;
   }[];
+  featuredArtwork?: FeaturedArtwork;
   sections: readonly ContentSection[];
   sources: readonly ContentSource[];
   editorial: EditorialRecord;

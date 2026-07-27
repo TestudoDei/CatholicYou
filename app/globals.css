@@ -76,6 +76,18 @@ blockquote cite { display: block; margin-top: 9px; color: #aab9c4; font: 10px/1 
 .story-grid aside p { margin-bottom: 0; font: italic 16px/1.6 var(--font-serif), serif; }
 .story-cta { display: inline-block; margin-top: 45px; color: var(--blue); font-size: 12px; font-weight: 750; }
 .story-cta span { color: var(--gold); margin-left: 5px; }
+.home-artwork { margin-top: 76px; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr); background: var(--blue-deep); color: white; overflow: hidden; }
+.home-artwork figure { margin: 0; padding: 32px; background: #e9dfcb; }
+.home-artwork figure img { width: 100%; height: 530px; display: block; object-fit: contain; }
+.home-artwork figcaption, .featured-art-section figcaption { margin-top: 16px; color: #56636c; font-size: 9px; line-height: 1.55; }
+.home-artwork figcaption cite, .featured-art-section figcaption cite { font-style: normal; font-weight: 750; }
+.home-artwork figcaption span, .featured-art-section figcaption span { display: block; margin-top: 3px; }
+.home-artwork-copy { padding: 58px 50px; display: flex; flex-direction: column; justify-content: center; }
+.home-artwork-copy .section-label { color: var(--gold-pale); }
+.home-artwork-copy h3 { margin: 0 0 25px; font: 500 clamp(36px, 4vw, 53px)/1.02 var(--font-serif), serif; letter-spacing: -.035em; }
+.home-artwork-copy > p:not(.section-label) { margin: 0; color: #c7d1d8; font: 400 17px/1.7 var(--font-serif), serif; }
+.home-artwork-copy a { margin-top: 35px; font-size: 12px; font-weight: 750; }
+.home-artwork-copy a span { color: var(--gold); margin-left: 5px; }
 .quality-grid { margin-top: 55px; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
 .quality-grid p { margin: 0; color: #52616c; font: 400 19px/1.75 var(--font-serif), serif; }
 
@@ -139,6 +151,13 @@ footer p:last-child { text-align: right; }
 .article-body section > p:not(.section-label):not(.source-marker) { color: #43545f; font: 400 18px/1.82 var(--font-serif), serif; }
 .article-body section > p:not(.section-label):not(.source-marker) + p { margin-top: 22px; }
 .source-marker { margin-top: 28px; color: #7b858c; font-size: 10px; font-weight: 650; }
+.featured-art-section figure { margin: 38px 0 32px; padding: 28px; background: var(--cream); }
+.featured-art-section figure a { display: block; }
+.featured-art-section figure img { width: 100%; max-height: 820px; display: block; object-fit: contain; }
+.featured-art-section .artwork-reading p { color: #43545f; font: 400 18px/1.82 var(--font-serif), serif; }
+.featured-art-section .artwork-reading p + p { margin-top: 22px; }
+.museum-link { display: inline-block; margin-top: 22px; color: var(--blue); font-size: 11px; font-weight: 750; }
+.museum-link span { color: var(--gold); margin-left: 5px; }
 .scripture-ledger > div { border-top: 1px solid var(--line); }
 .scripture-ledger a { min-height: 87px; display: grid; grid-template-columns: 135px 1fr 20px; gap: 20px; align-items: center; border-bottom: 1px solid var(--line); }
 .scripture-ledger strong { font: 600 15px var(--font-serif), serif; }
@@ -161,6 +180,8 @@ footer p:last-child { text-align: right; }
   .today-card { max-width: 560px; }
   .story-grid { grid-template-columns: 1fr 1fr; }
   .story-grid aside { grid-column: 1 / -1; }
+  .home-artwork { grid-template-columns: 1fr; }
+  .home-artwork figure img { height: 620px; }
   .signup { grid-template-columns: 1fr; gap: 30px; }
   .saint-hero-grid { grid-template-columns: 1fr; gap: 55px; }
   .identity-card { max-width: 520px; }
@@ -181,6 +202,10 @@ footer p:last-child { text-align: right; }
   .trust-strip { align-items: flex-start; flex-direction: column; gap: 12px; padding: 24px 28px; }
   .section-shell { padding: 80px 20px; }
   .story-grid, .devotion-grid, .quality-grid { grid-template-columns: 1fr; gap: 20px; }
+  .home-artwork { margin-top: 55px; }
+  .home-artwork figure { padding: 18px; }
+  .home-artwork figure img { height: auto; max-height: 560px; }
+  .home-artwork-copy { padding: 42px 28px 48px; }
   .split-heading { align-items: flex-start; flex-direction: column; gap: 25px; }
   .date-list article { grid-template-columns: 74px 1fr 20px; }
   .date-list h3 { font-size: 20px; }
@@ -201,6 +226,7 @@ footer p:last-child { text-align: right; }
   .scripture-ledger span { grid-column: 1; }
   .scripture-ledger i { grid-column: 2; grid-row: 1 / 3; }
   .review-card { grid-template-columns: 1fr; gap: 15px; }
+  .featured-art-section figure { margin-left: -20px; margin-right: -20px; padding: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

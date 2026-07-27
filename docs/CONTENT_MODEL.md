@@ -25,6 +25,16 @@ Do not reproduce Scripture translations, liturgical texts, prayers, articles, ph
 
 Before public or commercial launch, review every quotation and media asset, confirm any publisher-specific terms, and retain a permissions record for licensed material. When the license is unclear, paraphrase the underlying facts in original language, link to the source, or omit the material pending review.
 
+## Featured artwork standard
+
+A featured artwork should add meaning to the saint’s story, not merely fill visual space. Prefer a work that makes a documented episode, later tradition, devotional symbol, pilgrimage, or enduring Catholic reception more intelligible. The homepage uses the artwork as a visual doorway into the entry; the complete page provides a concise interpretation that distinguishes what the artwork depicts from what the historical record establishes.
+
+Artwork selection records five internal scores from 1–5: story relevance, art-historical significance, reproduction quality, interpretive richness, and audience appeal. Their 25-point total helps editors compare candidates for the future weekly sacred-art email. Scores are editorial signals rather than objective judgments of artistic worth, and they never publish automatically.
+
+Rights clearance is a gate, not a scoring category. Each selected image records its supplying institution, object page, accession number, image source, rights designation, policy page, credit line, and verification date. Use only the exact digital image expressly marked CC0 or Public Domain by its supplying institution. A high score cannot compensate for uncertain rights.
+
+Not every saint needs an artwork immediately. Leave the field empty when no meaningful, rights-cleared image has been found; a weak or generic image lowers trust more than an intentional absence.
+
 ## Homepage preview standard
 
 The homepage preview is written specifically for its limited space. It is not an excerpt cut from the full article.

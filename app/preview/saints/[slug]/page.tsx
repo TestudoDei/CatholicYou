@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FeaturedArtworkBlock } from "../../../../components/featured-artwork";
 import { SiteFooter, SiteHeader } from "../../../../components/site-chrome";
 import { getEntryBySlug } from "../../../../content";
 import { getStoryArcDefinition } from "../../../../content/story-arcs";
@@ -88,6 +89,7 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
             {entry.sections.map((section) => (
               <a href={`#${section.id}`} key={section.id}>{section.heading}</a>
             ))}
+            {entry.featuredArtwork ? <a href="#featured-artwork">Featured artwork</a> : null}
             <a href="#sources">Sources</a>
           </nav>
 
@@ -104,6 +106,13 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
                 ) : null}
               </section>
             ))}
+
+            {entry.featuredArtwork ? (
+              <FeaturedArtworkBlock
+                artwork={entry.featuredArtwork}
+                variant="article"
+              />
+            ) : null}
 
             <section className="scripture-ledger" id="scripture">
               <p className="section-label">Read in Scripture</p>

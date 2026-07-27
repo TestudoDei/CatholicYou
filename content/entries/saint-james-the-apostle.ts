@@ -66,6 +66,48 @@ export const saintJamesTheApostle = {
       url: "https://bible.usccb.org/bible/acts/12",
     },
   ],
+  featuredArtwork: {
+    id: "saint-james-book-of-hours",
+    title: "Manuscript Leaf with Saint James the Greater, from a Book of Hours",
+    artist: "Unknown Netherlandish illuminator",
+    date: "ca. 1500",
+    medium: "Tempera, ink, and shell gold on parchment",
+    institution: "The Metropolitan Museum of Art",
+    accessionNumber: "32.100.475d",
+    imagePath: "/art/saint-james-book-of-hours.jpg",
+    imageWidth: 932,
+    imageHeight: 1200,
+    imageSourceUrl:
+      "https://collectionapi.metmuseum.org/api/collection/v1/iiif/467518/933399/main-image",
+    objectUrl: "https://www.metmuseum.org/art/collection/search/467518",
+    alt:
+      "Illuminated manuscript leaf showing Saint James as a pilgrim, surrounded by scallop shells, walking staffs, and satchels.",
+    creditLine:
+      "The Friedsam Collection, Bequest of Michael Friedsam, 1931",
+    rights: {
+      designation: "Public Domain",
+      policyUrl: "https://www.metmuseum.org/hubs/open-access",
+      verifiedAt: "2026-07-27",
+    },
+    interpretation: {
+      heading: "James dressed for the road",
+      homepageNote:
+        "A medieval Book of Hours surrounds James with the equipment of pilgrimage: staff, satchel, and the scallop shells of Santiago.",
+      paragraphs: [
+        "This small devotional page does not picture James at the fishing boat, the Transfiguration, or his martyrdom. Instead, a Netherlandish illuminator presents the apostle as generations of pilgrims came to know him: already dressed for the road.",
+        "James stands with a staff and satchel while the border repeats walking staffs, travel bags, and scallop shells. The image shows how the pilgrimage to Santiago de Compostela reshaped his visual identity. The apostle who left his nets to follow Christ became, in Catholic imagination, a companion for everyone who must keep walking in faith.",
+      ],
+    },
+    editorialScores: {
+      storyRelevance: 5,
+      artisticSignificance: 3,
+      imageQuality: 5,
+      interpretiveRichness: 5,
+      audienceAppeal: 4,
+    },
+    weeklyFeatureNote:
+      "A strong thematic candidate whose pilgrim imagery is unusually legible; its anonymous authorship makes it less recognizable than works by major named artists.",
+  },
   sections: [
     {
       id: "called-from-the-boat",
