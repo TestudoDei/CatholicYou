@@ -17,6 +17,14 @@ Each transition is explicit. An entry cannot be publicly visible unless it has r
 
 Every substantive section lists the sources that support it. Sources record their publisher, URL or bibliographic location, access date, and the reason they were used.
 
+## Copyright and source use
+
+Sources support CatholicYou’s reporting; they are not a library of copy to republish. Write original prose that synthesizes and attributes factual claims, then link readers to the source. Use a direct quotation only when its exact wording materially matters, keep it brief, and preserve the required attribution.
+
+Do not reproduce Scripture translations, liturgical texts, prayers, articles, photographs, artwork, or substantial excerpts unless their license expressly permits the intended use or written permission has been recorded. A source’s availability on a Church website does not make it public domain, and attribution does not replace permission. Treat an ancient work and a modern translation or photograph of that work as separate copyright questions.
+
+Before public or commercial launch, review every quotation and media asset, confirm any publisher-specific terms, and retain a permissions record for licensed material. When the license is unclear, paraphrase the underlying facts in original language, link to the source, or omit the material pending review.
+
 ## Homepage preview standard
 
 The homepage preview is written specifically for its limited space. It is not an excerpt cut from the full article.

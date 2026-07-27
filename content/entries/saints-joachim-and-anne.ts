@@ -20,7 +20,7 @@ export const saintsJoachimAndAnne = {
     origin:
       "The Church venerates Joachim and Anne as the parents of the Virgin Mary and the grandparents of Jesus.",
     distinctiveSignificance:
-      "Ancient Christian tradition remembers years of longing, persistent prayer, and their joyful meeting at Jerusalem’s Golden Gate after learning they would become Mary’s parents.",
+      "Ancient Christian tradition remembers their joyful reunion at Jerusalem’s gate after learning that their long prayer for a child had been heard.",
     livingDevotion:
       "Couples hoping for a child, expectant parents, grandparents, and elders still seek their intercession. At Sainte-Anne-de-Beaupré in Québec, pilgrims have come since 1658 to pray for Saint Anne’s help.",
   },
@@ -79,7 +79,7 @@ export const saintsJoachimAndAnne = {
       heading: "The promise of a long-awaited child",
       paragraphs: [
         "An ancient Christian story remembers Joachim and Anne as a married couple who endured years without a child. Their sorrow did not end their trust in God: Joachim withdrew to fast and pray, while Anne carried her grief into a garden and pleaded for a child.",
-        "The story continues with an angelic promise and the couple’s joyful meeting at Jerusalem’s Golden Gate after learning that they would become parents. Their daughter would be Mary. The image of the two embracing at the gate has endured because it gathers longing, perseverance, and gratitude into a single human moment.",
+        "The story continues with an angelic promise and the couple’s joyful reunion at Jerusalem’s gate after learning that their long prayer for a child had been heard. Their daughter would be Mary. Later devotion and sacred art came to know this scene as the Meeting at the Golden Gate. The image of the two embracing at the gate has endured because it gathers longing, perseverance, and gratitude into a single human moment.",
       ],
       sourceIds: ["john-paul-ii-joachim-anne", "usccb-joachim-anne-novena"],
     },

@@ -115,7 +115,15 @@ test("leads Joachim and Anne with significance while preserving evidence notes",
   assert.ok(entry);
   assert.equal(entry.storyArc?.primary, "hidden_faithfulness");
   assert.deepEqual(getStoryArcIssues(entry), []);
-  assert.match(entry.preview.distinctiveSignificance, /Golden Gate/);
+  assert.match(
+    entry.preview.distinctiveSignificance,
+    /long prayer for a child had been heard/,
+  );
+  assert.doesNotMatch(
+    entry.preview.distinctiveSignificance,
+    /learn(?:ed|ing) (?:that )?they would become Mary’s parents/i,
+  );
+  assert.match(entry.sections[1]?.paragraphs[1] ?? "", /Golden Gate/);
   assert.match(entry.preview.livingDevotion, /Sainte-Anne-de-Beaupré/);
   assert.match(entry.sections[1]?.paragraphs[0] ?? "", /years without a child/);
   assert.match(entry.sections[3]?.paragraphs[0] ?? "", /Louis Guimont/);
