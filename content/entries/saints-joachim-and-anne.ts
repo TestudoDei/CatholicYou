@@ -64,7 +64,8 @@ export const saintsJoachimAndAnne = {
   ],
   featuredArtwork: {
     id: "joachim-anne-golden-gate",
-    title: "Joachim and Anna at the Golden Gate",
+    title: "Joachim and Anne at the Golden Gate",
+    sourceTitle: "Joachim and Anna at the Golden Gate",
     artist: "Albrecht Dürer",
     date: "1504",
     medium: "Woodcut on laid paper",

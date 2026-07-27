@@ -30,6 +30,7 @@ Prefer Scripture, Vatican documents, the Roman Missal and liturgical calendars, 
 - Distinguish the earliest recoverable form of a tradition from later devotional or artistic elaboration. Both can be meaningful, but they should not be collapsed into one historical claim.
 - Prefer concrete sentences that tell the reader what happened or what can be seen. Replace abstract phrases such as “gives the tradition a human center” with the actual human action or visual detail.
 - Let complete stories vary with the saint’s evidence and story arc. Do not force every life into the same lesson, conflict, or redemption pattern.
+- Keep reader-facing names consistent throughout an entry. When a museum, archive, or source uses a different form of a saint’s name, preserve its exact catalog title in the source record while using CatholicYou’s chosen form in displayed copy.
 
 ## Sacred art
 

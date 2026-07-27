@@ -79,6 +79,14 @@ test("records rights-cleared and ranked artwork for both pilot entries", () => {
     getArtworkEditorialScore(joachimAndAnne.featuredArtwork),
     MAX_ARTWORK_EDITORIAL_SCORE,
   );
+  assert.equal(
+    joachimAndAnne.featuredArtwork.sourceTitle,
+    "Joachim and Anna at the Golden Gate",
+  );
+  assert.equal(
+    joachimAndAnne.featuredArtwork.title,
+    "Joachim and Anne at the Golden Gate",
+  );
 });
 
 test("assigns every saint a source-grounded complete-story arc", () => {

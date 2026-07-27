@@ -92,6 +92,7 @@ export type ArtworkEditorialScore = 1 | 2 | 3 | 4 | 5;
 export interface FeaturedArtwork {
   id: string;
   title: string;
+  sourceTitle?: string;
   artist: string;
   date: string;
   medium: string;

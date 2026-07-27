@@ -81,6 +81,8 @@ test("renders Joachim and Anne through tradition and living devotion", async () 
   assert.match(html, /grandparents and elders who feel forgotten/i);
   assert.match(html, /The reunion that artists made unforgettable/);
   assert.match(html, /Albrecht Dürer/);
+  assert.match(html, /Joachim and Anne at the Golden Gate/);
+  assert.doesNotMatch(html, /Joachim and Anna/);
   assert.doesNotMatch(
     html,
     /A silence that asks for honesty|Scripture does not|does not name her parents|not through the canonical/i,
