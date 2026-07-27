@@ -19,21 +19,27 @@ export const saintsJoachimAndAnne = {
   preview: {
     origin:
       "The Church venerates Joachim and Anne as the parents of the Virgin Mary and the grandparents of Jesus.",
-    livedWitness:
-      "Although Scripture does not recount their lives, Christian tradition remembers a family in which Mary was prepared to listen to God and receive her vocation.",
-    enduringRelevance:
-      "Their memorial honors the quiet, often unseen work of handing faith from one generation to the next. It invites us to receive our roots with gratitude and to remain close to grandparents and elders.",
+    distinctiveSignificance:
+      "Ancient Christian tradition remembers years of longing, persistent prayer, and their joyful meeting at Jerusalem’s Golden Gate after learning they would become Mary’s parents.",
+    livingDevotion:
+      "Couples hoping for a child, expectant parents, grandparents, and elders still seek their intercession. At Sainte-Anne-de-Beaupré in Québec, pilgrims have come since 1658 to pray for Saint Anne’s help.",
   },
   atAGlance: [
     { label: "Known as", value: "Parents of the Blessed Virgin Mary" },
-    { label: "In tradition", value: "Grandparents of Jesus" },
-    { label: "Witness", value: "Faith handed on within family life" },
+    {
+      label: "Devotion",
+      value: "Marriage, expectant parents, families longing for a child, grandparents, and elders",
+    },
+    {
+      label: "Living pilgrimage",
+      value: "Sainte-Anne-de-Beaupré, Québec",
+    },
     { label: "Calendar", value: "General Roman; United States" },
   ],
   storyArc: {
     primary: "hidden_faithfulness",
     rationale:
-      "The canonical Scriptures do not narrate their lives; the Church's remembrance centers on the quiet transmission of faith within the family and the spiritual fruit borne by later generations.",
+      "The Church's remembrance centers on the quiet transmission of faith within Mary’s family and the spiritual fruit borne by later generations rather than on a public ministry.",
   },
   observance: {
     month: 7,
@@ -58,47 +64,51 @@ export const saintsJoachimAndAnne = {
   ],
   sections: [
     {
-      id: "scriptural-silence",
-      label: "Scripture",
-      heading: "A silence that asks for honesty",
-      paragraphs: [
-        "Scripture tells us about Mary’s place in the mystery of Christ, but it does not name her parents or recount their lives. CatholicYou therefore cannot present a detailed biography of Joachim and Anne as though it came from the Bible.",
-        "The readings appointed for their memorial look instead toward faithful ancestors and promises fulfilled across generations. Sirach praises the just whose heritage remains with their descendants, while the Gospel blesses those who see what earlier generations longed to see.",
-      ],
-      sourceIds: ["usccb-joachim-anne-readings", "john-paul-ii-joachim-anne"],
-    },
-    {
-      id: "ancient-tradition",
+      id: "parents-of-mary",
       label: "Tradition",
-      heading: "Names carried by ancient Christian tradition",
+      heading: "The parents of Mary",
       paragraphs: [
-        "The names Joachim and Anne come through an ancient tradition associated with the apocryphal Gospel of James, not through the canonical Gospels. Saint John Paul II explicitly identified that distinction when speaking before their liturgical memorial.",
-        "That tradition tells of a married couple who suffered childlessness, prayed with perseverance, and received the promise of a daughter. The familiar scenes of Joachim in the wilderness, Anne praying in a garden, and their joyful meeting at Jerusalem’s gate belong to this devotional tradition. They can nourish prayer without being presented as verified history.",
-      ],
-      sourceIds: ["john-paul-ii-joachim-anne", "usccb-joachim-anne-novena"],
-    },
-    {
-      id: "faith-at-home",
-      label: "Tradition",
-      heading: "The hidden work of a faithful home",
-      paragraphs: [
-        "The Church venerates Joachim and Anne as Mary’s parents and Jesus’ grandparents. Their importance is not attached to a public ministry recorded in Scripture. It is found in the mystery of a family life that preceded the Annunciation and in the generations through which God prepared a people to receive Christ.",
-        "Pope Francis has used their memorial to reflect on the home as a place where faith is handed on with love, freedom, encouragement, and closeness. This does not give us a transcript of Mary’s childhood. It gives the Church a truthful spiritual lens: much of salvation history is prepared through fidelity that the world never sees.",
+        "The Church remembers Joachim and Anne as the parents of the Virgin Mary and the grandparents of Jesus. Their place in the Catholic imagination begins in a home: before the Annunciation, the Visitation, or Bethlehem, Mary was a daughter who received life and love within a family.",
+        "Pope Francis has reflected on their home as part of the long chain through which faith and love of God were handed on to Mary. Their significance is quiet but immense. God’s work in one generation can prepare another generation to say yes.",
       ],
       sourceIds: ["francis-2013-angelus", "francis-2022-homily"],
     },
     {
-      id: "grandparents-and-elders",
-      label: "Documented history",
-      heading: "A bond between generations",
+      id: "long-awaited-child",
+      label: "Tradition",
+      heading: "The promise of a long-awaited child",
       paragraphs: [
-        "The memorial of Joachim and Anne has become a natural occasion for the Church to honor grandparents and elders. Pope Francis placed the World Day for Grandparents and the Elderly near their July memorial and repeatedly connected their witness with gratitude for those who preserve family memory and transmit faith.",
-        "Their relevance now is both tender and demanding. Catholics are invited not merely to remember older relatives affectionately, but to resist their isolation, listen to their wisdom, and recognize that a person’s dignity does not diminish with age or dependence.",
+        "An ancient Christian story remembers Joachim and Anne as a married couple who endured years without a child. Their sorrow did not end their trust in God: Joachim withdrew to fast and pray, while Anne carried her grief into a garden and pleaded for a child.",
+        "The story continues with an angelic promise and the couple’s joyful meeting at Jerusalem’s Golden Gate after learning that they would become parents. Their daughter would be Mary. The image of the two embracing at the gate has endured because it gathers longing, perseverance, and gratitude into a single human moment.",
+      ],
+      sourceIds: ["john-paul-ii-joachim-anne", "usccb-joachim-anne-novena"],
+    },
+    {
+      id: "intercession",
+      label: "Documented history",
+      heading: "Who asks for their prayers",
+      paragraphs: [
+        "Devotion to Joachim and Anne has made them especially close to married couples, expectant parents, families struggling to conceive, grandparents, and all who have grown old. The USCCB’s novena presents them as intercessors for each of these intentions.",
+        "Their story speaks to people living through long seasons that cannot be hurried: waiting for a child, caring for aging parents, trying to pass on faith, or wondering whether years of quiet love will bear fruit. Their memorial offers no demand for dramatic achievement. It honors faithful love that makes room for another person’s vocation.",
       ],
       sourceIds: [
+        "usccb-joachim-anne-novena",
         "francis-2015-angelus",
-        "francis-2022-homily",
         "usccb-grandparents",
+      ],
+    },
+    {
+      id: "sainte-anne-de-beaupre",
+      label: "Documented history",
+      heading: "A living pilgrimage to Saint Anne",
+      paragraphs: [
+        "Along the Saint Lawrence River near Québec City stands the Basilica of Sainte-Anne-de-Beaupré, one of North America’s oldest pilgrimage destinations. Devotion there began in 1658, and the first chapel’s construction became associated with the reported healing of Louis Guimont after he placed stones in its foundation.",
+        "Saint Anne was proclaimed patroness of Québec in 1876. Pilgrims still travel to the shrine, light candles, leave prayer intentions, celebrate Mass, and ask her intercession. Pope Francis celebrated Mass there in 2022 during his penitential pilgrimage to Canada. The shrine gives this memorial a physical destination: a place where inherited faith, suffering, hope, and prayer continue to meet.",
+      ],
+      sourceIds: [
+        "vatican-news-beaupre",
+        "beaupre-shrine",
+        "francis-2022-beaupre",
       ],
     },
     {
@@ -142,7 +152,7 @@ export const saintsJoachimAndAnne = {
       url: "https://www.usccb.org/resources/faith-perseverance-sts-anne-joachim-novena",
       accessedDate: "2026-07-26",
       note:
-        "Presents the ancient devotional story as an ancient story rather than as scriptural or verified biographical history.",
+        "Presents the ancient story of longing, prayer, the angelic promise, and the meeting at the Golden Gate, and identifies the intentions traditionally entrusted to their intercession.",
     },
     {
       id: "francis-2013-angelus",
@@ -187,6 +197,38 @@ export const saintsJoachimAndAnne = {
       note:
         "Explains the relationship between the memorial and the Church’s World Day for Grandparents and the Elderly, including its observance in the United States.",
     },
+    {
+      id: "vatican-news-beaupre",
+      kind: "holy_see",
+      title: "St. Anne de Beaupré: A Shrine for all Québec’s communities",
+      publisher: "Vatican News",
+      url: "https://www.vaticannews.va/en/church/news/2022-07/pope-canada-pilgrimage-st-anne-de-beaupre-mass-quebec.html",
+      publishedDate: "2022-07-28",
+      accessedDate: "2026-07-27",
+      note:
+        "Documents the shrine’s 1658 beginnings, the reported healing of Louis Guimont, its pilgrimage history, and Saint Anne’s patronage of Québec.",
+    },
+    {
+      id: "beaupre-shrine",
+      kind: "official_shrine",
+      title: "Encounter Saint Anne",
+      publisher: "Sanctuaire Sainte-Anne-de-Beaupré",
+      url: "https://sanctuairesainteanne.org/en/pages/encounter-saint-anne",
+      accessedDate: "2026-07-27",
+      note:
+        "The shrine’s official visitor resource documents its continuing prayer intentions, relics, pilgrimage, and devotion to Saint Anne.",
+    },
+    {
+      id: "francis-2022-beaupre",
+      kind: "holy_see",
+      title: "Holy Mass at the National Shrine of Saint Anne de Beaupré",
+      publisher: "The Holy See",
+      url: "https://www.vatican.va/content/francesco/en/homilies/2022/documents/20220728-omelia-beaupre-canada.html",
+      publishedDate: "2022-07-28",
+      accessedDate: "2026-07-27",
+      note:
+        "Records Pope Francis’s 2022 Mass at the shrine during his penitential pilgrimage to Canada.",
+    },
   ],
   editorial: {
     status: "fact_checked",
@@ -196,8 +238,9 @@ export const saintsJoachimAndAnne = {
     humanReviewedBy: null,
     notes: [
       "Private preview only: human review is still required before publication.",
-      "The entry explicitly distinguishes canonical Scripture from the apocryphal and devotional tradition.",
+      "Evidence boundaries are preserved in section labels, source notes, and editorial review without leading the reader-facing story with an absence-from-Scripture disclaimer.",
       "Specific biographical details beyond the ancient tradition have been omitted.",
+      "The healing of Louis Guimont is described as reported by the shrine tradition, not independently adjudicated by CatholicYou.",
       "July 26, 2026 falls on a Sunday; the Sunday celebration takes precedence over this memorial in the ordinary parish calendar.",
     ],
   },

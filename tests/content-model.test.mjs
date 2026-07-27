@@ -40,10 +40,10 @@ test("gives every saint preview a complete narrative arc", () => {
   });
   assert.ok(preview);
   assert.match(preview.preview.origin, /son of Zebedee/);
-  assert.match(preview.preview.livedWitness, /Transfiguration/);
-  assert.match(preview.preview.enduringRelevance, /Camino de Santiago/);
+  assert.match(preview.preview.distinctiveSignificance, /Transfiguration/);
+  assert.match(preview.preview.livingDevotion, /Camino de Santiago/);
   assert.doesNotMatch(
-    `${preview.preview.origin} ${preview.preview.livedWitness} ${preview.preview.enduringRelevance}`,
+    `${preview.preview.origin} ${preview.preview.distinctiveSignificance} ${preview.preview.livingDevotion}`,
     /^(this|that|these|those)\b/i,
   );
 });
@@ -108,15 +108,21 @@ test("lets Sunday take precedence over a saint feast or memorial", () => {
   );
 });
 
-test("keeps tradition explicit in the Joachim and Anne entry", () => {
+test("leads Joachim and Anne with significance while preserving evidence notes", () => {
   const entry = getEntryBySlug("saints-joachim-and-anne", {
     includePrivatePreview: true,
   });
   assert.ok(entry);
   assert.equal(entry.storyArc?.primary, "hidden_faithfulness");
   assert.deepEqual(getStoryArcIssues(entry), []);
-  assert.match(entry.sections[0]?.paragraphs[0] ?? "", /does not name her parents/);
-  assert.match(entry.sections[1]?.paragraphs[0] ?? "", /apocryphal Gospel of James/);
+  assert.match(entry.preview.distinctiveSignificance, /Golden Gate/);
+  assert.match(entry.preview.livingDevotion, /Sainte-Anne-de-Beaupré/);
+  assert.match(entry.sections[1]?.paragraphs[0] ?? "", /years without a child/);
+  assert.match(entry.sections[3]?.paragraphs[0] ?? "", /Louis Guimont/);
+  assert.doesNotMatch(
+    entry.sections.flatMap((section) => section.paragraphs).join(" "),
+    /does not name|not (?:in|mentioned in) Scripture|not through the canonical/i,
+  );
   assert.equal(isPubliclyVisible(entry), false);
 });
 

@@ -59,18 +59,25 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
   assert.equal(publicResponse.status, 404);
 });
 
-test("renders Joachim and Anne with explicit evidence boundaries", async () => {
+test("renders Joachim and Anne through tradition and living devotion", async () => {
   const privateResponse = await render("/preview/saints/saints-joachim-and-anne");
   assert.equal(privateResponse.status, 200);
   const html = await privateResponse.text();
 
   assert.match(html, /Saints Joachim and Anne/);
   assert.match(html, /Liturgical color:.*White/);
-  assert.match(html, /A silence that asks for honesty/);
-  assert.match(html, /Names carried by ancient Christian tradition/);
-  assert.match(html, /apocryphal Gospel of James/);
+  assert.match(html, /The parents of Mary/);
+  assert.match(html, /The promise of a long-awaited child/);
+  assert.match(html, /Who asks for their prayers/);
+  assert.match(html, /A living pilgrimage to Saint Anne/);
+  assert.match(html, /Sainte-Anne-de-Beaupré/);
+  assert.match(html, /Louis Guimont/);
   assert.match(html, /Hidden faithfulness/);
   assert.match(html, /grandparents and elders who feel forgotten/i);
+  assert.doesNotMatch(
+    html,
+    /A silence that asks for honesty|Scripture does not|does not name her parents|not through the canonical/i,
+  );
 
   const publicResponse = await render("/saints/saints-joachim-and-anne");
   assert.equal(publicResponse.status, 404);
@@ -85,6 +92,7 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
   const weekdayHtml = await weekdayResponse.text();
   assert.match(weekdayHtml, /The faith handed on at home/);
   assert.match(weekdayHtml, /Saints Joachim and Anne/);
+  assert.match(weekdayHtml, /Sainte-Anne-de-Beaupré/);
   assert.doesNotMatch(weekdayHtml, /the Apostle/);
 });
 

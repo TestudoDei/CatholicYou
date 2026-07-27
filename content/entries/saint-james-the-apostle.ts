@@ -16,9 +16,9 @@ export const saintJamesTheApostle = {
   preview: {
     origin:
       "James, the son of Zebedee and brother of John, was among the first disciples called by Jesus.",
-    livedWitness:
+    distinctiveSignificance:
       "Scripture places him at the Transfiguration and in Gethsemane, close to Christ at moments of glory and anguish.",
-    enduringRelevance:
+    livingDevotion:
       "Among the Twelve, James is the first whose martyrdom is recorded in the New Testament. For centuries, pilgrims have walked the Camino de Santiago in his honor—a long road that turns every step into prayer.",
   },
   atAGlance: [

@@ -153,9 +153,9 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
           <div className="story-grid">
             <p className="drop-cap">
-              {observance.preview.origin} {observance.preview.livedWitness}
+              {observance.preview.origin} {observance.preview.distinctiveSignificance}
             </p>
-            <p>{observance.preview.enduringRelevance}</p>
+            <p>{observance.preview.livingDevotion}</p>
             <aside>
               <span>For prayer today</span>
               <p>{observance.prayerPrompt}</p>

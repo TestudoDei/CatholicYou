@@ -24,16 +24,18 @@ The homepage preview is written specifically for its limited space. It is not an
 Each saint preview follows the same narrative sequence:
 
 1. **Origin:** who the saint was and how the story begins.
-2. **Lived witness:** why the saint mattered during his or her lifetime.
-3. **Enduring relevance:** how the saint's witness, devotion, or legacy speaks to Catholics now.
+2. **Distinctive significance:** the best-supported tradition, patronage, witness, or story that makes this saint memorable.
+3. **Living devotion:** a concrete way Catholics encounter the saint now, such as a shrine, pilgrimage, novena, feast-day custom, work of mercy, or established devotion.
 
-The preview should normally use one sentence for origin, one for lived witness, and no more than two for enduring relevance. A separate prayer prompt turns the story toward reflection. Avoid context-dependent openings such as "this failure" or "this event"; every preview must stand on its own.
+The preview should normally use one sentence for origin, one for distinctive significance, and no more than two for living devotion. A separate prayer prompt turns the story toward reflection. Avoid context-dependent openings such as "this failure" or "this event"; every preview must stand on its own.
+
+Do not spend reader-facing space announcing that a saint is absent from Scripture. When Scripture does not supply the biographical story, pivot to the best-supported tradition, intercession, patronage, reported miracle, shrine, pilgrimage, or devotional practice. Preserve the evidence boundary in source notes and editorial review, and use proportionate language such as "tradition remembers" or "the shrine records."
 
 ## Complete-story standard
 
 Every saint entry names one primary story arc and may name one distinct secondary arc. The evidence determines the arc; an editor must never select an appealing narrative first and bend the saint's life to fit it.
 
-The arc guides the order and emphasis of the complete story without replacing editorial judgment. All complete stories still require historical or scriptural grounding, proportionate treatment of tradition, spiritual movement, enduring relevance, an invitation to prayer, and a reviewable source record.
+The arc guides the order and emphasis of the complete story without replacing editorial judgment. All complete stories still require historical grounding, proportionate treatment of Scripture and tradition when relevant, spiritual movement, enduring relevance, an invitation to prayer, and a reviewable source record.
 
 See [Editorial story arcs](./EDITORIAL_STORY_ARCS.md) for the available arcs, section sequences, and selection rules.
 

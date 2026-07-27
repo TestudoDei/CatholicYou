@@ -22,6 +22,7 @@ export type SourceKind =
   | "scripture"
   | "holy_see"
   | "liturgical_calendar"
+  | "official_shrine"
   | "scholarly_reference";
 
 export type StoryArc =
@@ -77,8 +78,8 @@ export interface LiturgicalObservance {
 
 export interface EditorialPreview {
   origin: string;
-  livedWitness: string;
-  enduringRelevance: string;
+  distinctiveSignificance: string;
+  livingDevotion: string;
 }
 
 export interface AtAGlanceFact {
