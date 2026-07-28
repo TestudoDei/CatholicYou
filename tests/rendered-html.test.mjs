@@ -130,6 +130,7 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
     weekdayHtml,
     /In prayer, remember married couples, those longing for a child, expectant parents, grandparents, and elders who hand on the faith/,
   );
+  assert.doesNotMatch(weekdayHtml, /For prayer today/);
   assert.doesNotMatch(weekdayHtml, /Today in the Church/);
   assert.doesNotMatch(weekdayHtml, /Ancient Christian tradition/);
   assert.doesNotMatch(

@@ -163,7 +163,6 @@ export default async function Home({ searchParams }: HomeProps) {
             </p>
             <p>{observance.preview.livingDevotion}</p>
             <aside>
-              <span>For prayer today</span>
               <p>{observance.prayerPrompt}</p>
             </aside>
           </div>

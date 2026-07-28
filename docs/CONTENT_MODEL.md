@@ -49,7 +49,7 @@ The preview should normally use one sentence for origin, one for distinctive sig
 
 Featured Scripture on the homepage is optional and entry-specific. Include it only when the passage directly illuminates the saint, the documented story arc, or the proper readings of the observance. Never fill a quotation-shaped design slot with a merely adjacent verse; the layout must remain complete when no featured passage is selected.
 
-The prayer panel uses the recurring label “For prayer today.” Its body should name intentions directly connected to the saint’s documented patronage, established intercession, story, or living devotion. Do not infer a generalized emotional struggle merely to make the application feel universal.
+The prayer panel stands apart through its visual treatment rather than a recurring title. Its body should open naturally and name intentions directly connected to the saint’s documented patronage, established intercession, story, or living devotion. Do not infer a generalized emotional struggle merely to make the application feel universal.
 
 Do not spend reader-facing space announcing that a saint is absent from Scripture. When Scripture does not supply the biographical story, pivot to the best-supported tradition, intercession, patronage, reported miracle, shrine, pilgrimage, or devotional practice. Preserve the evidence boundary in source notes and editorial review, and use proportionate language such as "tradition remembers" or "the shrine records."
 

@@ -35,7 +35,7 @@ Prefer Scripture, Vatican documents, the Roman Missal and liturgical calendars, 
 - Demonstrate editorial care through the content itself. Avoid repeatedly describing CatholicYou as trustworthy, sourced, respectful, or otherwise well made.
 - Omit terminal periods from display copy, including headings, subheadings, titles, subtitles, kickers, labels, and calls to action. Use normal punctuation in paragraphs, prayers, quotations, captions, and other sentence-level prose.
 - Use sentence case for display copy unless a proper name requires capitalization.
-- Keep “For prayer today” as the recurring prayer label, but vary the opening of the prayer itself when “Pray for” would create clumsy repetition. Prefer direct, source-grounded intentions over generalized emotional applications.
+- Let the italicized prayer panel stand without a heading. Begin its body with natural devotional language such as “In prayer,” and prefer direct, source-grounded intentions over generalized emotional applications.
 
 ## Sacred art
 
