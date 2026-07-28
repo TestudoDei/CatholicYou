@@ -52,6 +52,7 @@ nav a:hover { color: var(--gold); }
 .card-date span { font-size: 9px; font-weight: 700; letter-spacing: .14em; writing-mode: vertical-rl; }
 .card-date strong { margin: auto 0; font: 500 58px/1 var(--font-serif), serif; }
 .card-content { z-index: 1; padding: 64px 44px 42px; }
+.card-content-no-scripture { display: flex; flex-direction: column; justify-content: center; }
 .card-label { color: var(--gold-pale); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .card-content h2 { margin: 22px 0 8px; font: 500 48px/1 var(--font-serif), serif; letter-spacing: -.03em; }
 .card-meta { color: #b7c3cc; font-size: 11px; }

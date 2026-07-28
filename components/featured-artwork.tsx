@@ -41,7 +41,7 @@ export function FeaturedArtworkBlock({
           <ArtworkCredit artwork={artwork} />
         </figure>
         <div className="home-artwork-copy">
-          <p className="section-label">The saint in sacred art</p>
+          <p className="section-label">Saints in sacred art</p>
           <h3 id={`art-${artwork.id}`}>{artwork.title}</h3>
           <p>{artwork.interpretation.homepageNote}</p>
           {detailUrl ? (
@@ -56,7 +56,7 @@ export function FeaturedArtworkBlock({
 
   return (
     <section className="featured-art-section" id="featured-artwork">
-      <p className="section-label">The saint in sacred art</p>
+      <p className="section-label">Saints in sacred art</p>
       <h2>{artwork.interpretation.heading}</h2>
       <figure>
         <a href={artwork.objectUrl} target="_blank" rel="noreferrer">

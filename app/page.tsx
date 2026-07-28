@@ -87,10 +87,10 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <h1>Meet the saints.<br /><em>Keep the feasts.</em></h1>
+          <h1>Meet the saints<br /><em>Keep the feasts</em></h1>
           <p className="hero-lede">
             Discover Scripture, tradition, and the lives of the saints through
-            the rhythm of the Church’s calendar.
+            the rhythm of the Church’s calendar
           </p>
           <div className="hero-actions">
             {detailUrl ? (
@@ -110,7 +110,13 @@ export default async function Home({ searchParams }: HomeProps) {
             <strong>{date.day}</strong>
             <span>{date.monthYear}</span>
           </div>
-          <div className="card-content">
+          <div
+            className={`card-content ${
+              observance && !observance.featuredScripture
+                ? "card-content-no-scripture"
+                : ""
+            }`}
+          >
             {observance ? (
               <>
                 <p className="card-label">{observance.observance.rank} of the day</p>
@@ -141,15 +147,14 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       <section className="trust-strip" aria-label="CatholicYou topics">
-        <span>Saints &amp; Feasts</span>
-        <span>Scripture &amp; Tradition</span>
-        <span>Sacred Art &amp; Devotion</span>
+        <span>Saints &amp; feasts</span>
+        <span>Scripture &amp; tradition</span>
+        <span>Sacred art &amp; devotion</span>
       </section>
 
       {observance ? (
         <section className="story section-shell" id="about-james">
           <div className="section-heading">
-            <p className="kicker">Today in the Church</p>
             <h2>{observance.theme}</h2>
           </div>
           <div className="story-grid">

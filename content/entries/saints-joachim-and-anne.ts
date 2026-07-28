@@ -15,12 +15,12 @@ export const saintsJoachimAndAnne = {
     "The Church venerates Joachim and Anne as the parents of the Virgin Mary and grandparents of Jesus, honoring the quiet faith handed from one generation to the next.",
   theme: "The faith handed on at home",
   prayerPrompt:
-    "Pray for grandparents and elders, for families carrying faith across generations, and for those who fear their quiet love has gone unseen.",
+    "In prayer, remember married couples, those longing for a child, expectant parents, grandparents, and elders who hand on the faith.",
   preview: {
     origin:
       "The Church venerates Joachim and Anne as the parents of the Virgin Mary and the grandparents of Jesus.",
     distinctiveSignificance:
-      "Ancient Christian tradition remembers their joyful reunion at Jerusalem’s gate after learning that their long prayer for a child had been heard.",
+      "Christian tradition remembers their joyful reunion at Jerusalem’s gate after learning that their long prayer for a child had been heard.",
     livingDevotion:
       "Couples hoping for a child, expectant parents, grandparents, and elders still seek their intercession. At Sainte-Anne-de-Beaupré in Québec, pilgrims have come since 1658 to pray for Saint Anne’s help.",
   },

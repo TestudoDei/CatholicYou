@@ -162,6 +162,8 @@ test("leads Joachim and Anne with significance while preserving evidence notes",
     entry.preview.distinctiveSignificance,
     /long prayer for a child had been heard/,
   );
+  assert.doesNotMatch(entry.preview.distinctiveSignificance, /^Ancient\b/);
+  assert.match(entry.prayerPrompt, /^In prayer, remember married couples/);
   assert.doesNotMatch(
     entry.preview.distinctiveSignificance,
     /learn(?:ed|ing) (?:that )?they would become Mary’s parents/i,

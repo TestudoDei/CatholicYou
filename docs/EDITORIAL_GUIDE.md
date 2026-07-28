@@ -33,9 +33,13 @@ Prefer Scripture, Vatican documents, the Roman Missal and liturgical calendars, 
 - Keep reader-facing names consistent throughout an entry. When a museum, archive, or source uses a different form of a saint’s name, preserve its exact catalog title in the source record while using CatholicYou’s chosen form in displayed copy.
 - Treat homepage Scripture as optional. Use it when the passage is directly connected to the saint, the entry’s story, or the observance’s proper readings; omit it when the connection would need to be forced.
 - Demonstrate editorial care through the content itself. Avoid repeatedly describing CatholicYou as trustworthy, sourced, respectful, or otherwise well made.
+- Omit terminal periods from display copy, including headings, subheadings, titles, subtitles, kickers, labels, and calls to action. Use normal punctuation in paragraphs, prayers, quotations, captions, and other sentence-level prose.
+- Use sentence case for display copy unless a proper name requires capitalization.
+- Keep “For prayer today” as the recurring prayer label, but vary the opening of the prayer itself when “Pray for” would create clumsy repetition. Prefer direct, source-grounded intentions over generalized emotional applications.
 
 ## Sacred art
 
+- Use “Saints in sacred art” as the recurring series label on saint entries, whether an individual work depicts one saint or several.
 - Select art because it reveals something important about the saint’s reception, symbolism, devotion, or story—not simply because an image is available.
 - On the homepage, identify what the viewer can see and why it matters in one clear sentence. On the complete page, explain the work more fully while distinguishing artistic interpretation from Scripture and documented history.
 - Keep artwork scoring and weekly-email suitability internal. The visitor should encounter the work and its meaning, not the editorial ranking.

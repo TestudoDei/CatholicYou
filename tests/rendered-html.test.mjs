@@ -42,9 +42,13 @@ test("renders the private Saint James homepage preview from structured content",
   assert.match(html, /Manuscript Leaf with Saint James the Greater/);
   assert.match(html, /Look more closely/);
   assert.match(html, /Whoever wishes to be great among you shall be your servant/);
-  assert.match(html, /Saints &amp; Feasts/);
-  assert.match(html, /Scripture &amp; Tradition/);
-  assert.match(html, /Sacred Art &amp; Devotion/);
+  assert.match(html, /Saints &amp; feasts/);
+  assert.match(html, /Scripture &amp; tradition/);
+  assert.match(html, /Sacred art &amp; devotion/);
+  assert.match(html, /Meet the saints.*<br\/>.*Keep the feasts/s);
+  assert.doesNotMatch(html, /<h1>Meet the saints\./);
+  assert.doesNotMatch(html, /Keep the feasts\.<\/em>/);
+  assert.match(html, /Church’s calendar<\/p>/);
   assert.match(html, /Read the complete entry/);
   assert.doesNotMatch(html, /The Church’s calendar, made personal/);
   assert.doesNotMatch(html, /Read the sourced story/);
@@ -100,6 +104,8 @@ test("renders Joachim and Anne through tradition and living devotion", async () 
   assert.match(html, /Albrecht Dürer/);
   assert.match(html, /Joachim and Anne at the Golden Gate/);
   assert.doesNotMatch(html, /Joachim and Anna/);
+  assert.match(html, /Saints in sacred art/);
+  assert.doesNotMatch(html, /The saint in sacred art/);
   assert.doesNotMatch(
     html,
     /A silence that asks for honesty|Scripture does not|does not name her parents|not through the canonical/i,
@@ -119,6 +125,13 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
   assert.match(weekdayHtml, /The faith handed on at home/);
   assert.match(weekdayHtml, /Saints Joachim and Anne/);
   assert.match(weekdayHtml, /Sainte-Anne-de-Beaupré/);
+  assert.match(weekdayHtml, /card-content card-content-no-scripture/);
+  assert.match(
+    weekdayHtml,
+    /In prayer, remember married couples, those longing for a child, expectant parents, grandparents, and elders who hand on the faith/,
+  );
+  assert.doesNotMatch(weekdayHtml, /Today in the Church/);
+  assert.doesNotMatch(weekdayHtml, /Ancient Christian tradition/);
   assert.doesNotMatch(
     weekdayHtml,
     /Whoever wishes to be great among you shall be your servant/,
