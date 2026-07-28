@@ -136,6 +136,11 @@ export interface ContentEntry {
   summary: string;
   theme: string;
   prayerPrompt: string;
+  featuredScripture?: {
+    text: string;
+    citation: string;
+    url: string;
+  };
   preview: EditorialPreview;
   atAGlance: readonly AtAGlanceFact[];
   storyArc?: StoryArcAssignment;

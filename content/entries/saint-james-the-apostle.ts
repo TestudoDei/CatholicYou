@@ -13,6 +13,11 @@ export const saintJamesTheApostle = {
   theme: "A faith worth walking for",
   prayerPrompt:
     "Ask for the courage to follow Christ generously, especially when the road is difficult.",
+  featuredScripture: {
+    text: "Whoever wishes to be great among you shall be your servant.",
+    citation: "Matthew 20:26",
+    url: "https://bible.usccb.org/bible/matthew/20",
+  },
   preview: {
     origin:
       "James, the son of Zebedee and brother of John, was among the first disciples called by Jesus.",

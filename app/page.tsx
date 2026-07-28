@@ -87,11 +87,10 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="kicker">The Church’s calendar, made personal</p>
           <h1>Meet the saints.<br /><em>Keep the feasts.</em></h1>
           <p className="hero-lede">
-            A quiet, trustworthy companion for the Catholic year—saints,
-            solemnities, and novenas presented with care.
+            Discover Scripture, tradition, and the lives of the saints through
+            the rhythm of the Church’s calendar.
           </p>
           <div className="hero-actions">
             {detailUrl ? (
@@ -117,11 +116,12 @@ export default async function Home({ searchParams }: HomeProps) {
                 <p className="card-label">{observance.observance.rank} of the day</p>
                 <h2>{observance.title}</h2>
                 <p className="card-meta">{observance.descriptor}</p>
-                <blockquote>
-                  “Whoever wishes to be great among you shall be your servant.”
-                  <cite>— Matthew 20:26</cite>
-                </blockquote>
-                <Link href={detailUrl ?? "#"}>Read the sourced story <span>→</span></Link>
+                {observance.featuredScripture ? (
+                  <blockquote>
+                    “{observance.featuredScripture.text}”
+                    <cite>— {observance.featuredScripture.citation}</cite>
+                  </blockquote>
+                ) : null}
               </>
             ) : (
               <>
@@ -140,10 +140,10 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
-      <section className="trust-strip" aria-label="Editorial principles">
-        <span>Carefully sourced</span>
-        <span>Liturgically grounded</span>
-        <span>Respectfully written</span>
+      <section className="trust-strip" aria-label="CatholicYou topics">
+        <span>Saints &amp; Feasts</span>
+        <span>Scripture &amp; Tradition</span>
+        <span>Sacred Art &amp; Devotion</span>
       </section>
 
       {observance ? (
@@ -163,7 +163,7 @@ export default async function Home({ searchParams }: HomeProps) {
             </aside>
           </div>
           <a className="story-cta" href={detailUrl ?? "#"}>
-            Read the complete entry and its sources <span>→</span>
+            Read the complete entry <span>→</span>
           </a>
           {observance.featuredArtwork ? (
             <FeaturedArtworkBlock

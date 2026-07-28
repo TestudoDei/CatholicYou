@@ -47,6 +47,8 @@ Each saint preview follows the same narrative sequence:
 
 The preview should normally use one sentence for origin, one for distinctive significance, and no more than two for living devotion. A separate prayer prompt turns the story toward reflection. Avoid context-dependent openings such as "this failure" or "this event"; every preview must stand on its own.
 
+Featured Scripture on the homepage is optional and entry-specific. Include it only when the passage directly illuminates the saint, the documented story arc, or the proper readings of the observance. Never fill a quotation-shaped design slot with a merely adjacent verse; the layout must remain complete when no featured passage is selected.
+
 Do not spend reader-facing space announcing that a saint is absent from Scripture. When Scripture does not supply the biographical story, pivot to the best-supported tradition, intercession, patronage, reported miracle, shrine, pilgrimage, or devotional practice. Preserve the evidence boundary in source notes and editorial review, and use proportionate language such as "tradition remembers" or "the shrine records."
 
 ## Complete-story standard

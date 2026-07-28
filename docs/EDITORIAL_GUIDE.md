@@ -31,6 +31,8 @@ Prefer Scripture, Vatican documents, the Roman Missal and liturgical calendars, 
 - Prefer concrete sentences that tell the reader what happened or what can be seen. Replace abstract phrases such as “gives the tradition a human center” with the actual human action or visual detail.
 - Let complete stories vary with the saint’s evidence and story arc. Do not force every life into the same lesson, conflict, or redemption pattern.
 - Keep reader-facing names consistent throughout an entry. When a museum, archive, or source uses a different form of a saint’s name, preserve its exact catalog title in the source record while using CatholicYou’s chosen form in displayed copy.
+- Treat homepage Scripture as optional. Use it when the passage is directly connected to the saint, the entry’s story, or the observance’s proper readings; omit it when the connection would need to be forced.
+- Demonstrate editorial care through the content itself. Avoid repeatedly describing CatholicYou as trustworthy, sourced, respectful, or otherwise well made.
 
 ## Sacred art
 

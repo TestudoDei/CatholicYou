@@ -47,6 +47,7 @@ test("gives every saint preview a complete narrative arc", () => {
   assert.match(preview.preview.origin, /son of Zebedee/);
   assert.match(preview.preview.distinctiveSignificance, /Transfiguration/);
   assert.match(preview.preview.livingDevotion, /Camino de Santiago/);
+  assert.equal(preview.featuredScripture?.citation, "Matthew 20:26");
   assert.doesNotMatch(
     `${preview.preview.origin} ${preview.preview.distinctiveSignificance} ${preview.preview.livingDevotion}`,
     /^(this|that|these|those)\b/i,
@@ -155,6 +156,7 @@ test("leads Joachim and Anne with significance while preserving evidence notes",
   });
   assert.ok(entry);
   assert.equal(entry.storyArc?.primary, "hidden_faithfulness");
+  assert.equal(entry.featuredScripture, undefined);
   assert.deepEqual(getStoryArcIssues(entry), []);
   assert.match(
     entry.preview.distinctiveSignificance,

@@ -30,12 +30,29 @@ test("renders the private Saint James homepage preview from structured content",
   const html = await response.text();
   assert.match(html, /Saint James/);
   assert.match(html, /A faith worth walking for/);
+  assert.match(
+    html,
+    /Discover Scripture, tradition, and the lives of the saints through/,
+  );
+  assert.match(html, /rhythm of the Church’s calendar/);
   assert.match(html, /among the first disciples called by Jesus/);
   assert.match(html, /Transfiguration and in Gethsemane/);
   assert.match(html, /Camino de Santiago/);
   assert.match(html, /every step into prayer/);
   assert.match(html, /Manuscript Leaf with Saint James the Greater/);
   assert.match(html, /Look more closely/);
+  assert.match(html, /Whoever wishes to be great among you shall be your servant/);
+  assert.match(html, /Saints &amp; Feasts/);
+  assert.match(html, /Scripture &amp; Tradition/);
+  assert.match(html, /Sacred Art &amp; Devotion/);
+  assert.match(html, /Read the complete entry/);
+  assert.doesNotMatch(html, /The Church’s calendar, made personal/);
+  assert.doesNotMatch(html, /Read the sourced story/);
+  assert.doesNotMatch(html, /complete entry and its sources/);
+  assert.doesNotMatch(
+    html,
+    /Carefully sourced|Liturgically grounded|Respectfully written/,
+  );
   assert.doesNotMatch(html, /This failure is not incidental/);
   assert.match(html, /Private editorial preview/);
   assert.match(html, /preview\/saints\/saint-james-the-apostle/);
@@ -102,6 +119,10 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
   assert.match(weekdayHtml, /The faith handed on at home/);
   assert.match(weekdayHtml, /Saints Joachim and Anne/);
   assert.match(weekdayHtml, /Sainte-Anne-de-Beaupré/);
+  assert.doesNotMatch(
+    weekdayHtml,
+    /Whoever wishes to be great among you shall be your servant/,
+  );
   assert.match(
     weekdayHtml,
     /beneath the city gate, Joachim and Anne embrace after learning that their prayer for a child has been heard/,
