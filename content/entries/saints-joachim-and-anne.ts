@@ -10,7 +10,7 @@ export const saintsJoachimAndAnne = {
     "Parents of the Blessed Virgin Mary",
     "Grandparents of Jesus",
   ],
-  descriptor: "Parents of Mary · Grandparents of Jesus",
+  descriptor: "Parents of Mary · grandparents of Jesus",
   summary:
     "The Church venerates Joachim and Anne as the parents of the Virgin Mary and grandparents of Jesus, honoring the quiet faith handed from one generation to the next.",
   theme: "The faith handed on at home",
@@ -62,6 +62,10 @@ export const saintsJoachimAndAnne = {
       url: "https://bible.usccb.org/bible/readings/0726-memorial-joachim-anne.cfm",
     },
   ],
+  scriptureSection: {
+    label: "The memorial readings",
+    heading: "Faith handed on through generations",
+  },
   featuredArtwork: {
     id: "joachim-anne-golden-gate",
     title: "Joachim and Anne at the Golden Gate",
@@ -92,7 +96,7 @@ export const saintsJoachimAndAnne = {
         "Dürer makes the traditional reunion vivid: beneath the city gate, Joachim and Anne embrace after learning that their prayer for a child has been heard.",
       paragraphs: [
         "Albrecht Dürer turns the traditional reunion of Joachim and Anne into a public moment of private tenderness. The city gate towers above them, witnesses crowd nearby, and yet the center of the woodcut is simply the aging couple’s embrace.",
-        "The image belongs to Dürer’s Life of the Virgin series. It gives visual form to a later Christian tradition rather than to an event narrated in Scripture. That distinction does not weaken the work; it helps us see what generations of Christians found spiritually compelling in the story—the relief of a prayer heard, the fidelity of a marriage tested by waiting, and gratitude arriving before the future is fully known.",
+        "The image belongs to Dürer’s Life of the Virgin series and gives visual form to a later Christian tradition. Dürer makes its appeal visible: the relief of a prayer heard, the fidelity of a marriage tested by waiting, and gratitude arriving before the future is fully known.",
       ],
     },
     editorialScores: {
@@ -121,7 +125,7 @@ export const saintsJoachimAndAnne = {
       label: "Tradition",
       heading: "The promise of a long-awaited child",
       paragraphs: [
-        "An ancient Christian story remembers Joachim and Anne as a married couple who endured years without a child. Their sorrow did not end their trust in God: Joachim withdrew to fast and pray, while Anne carried her grief into a garden and pleaded for a child.",
+        "A Christian tradition remembers Joachim and Anne as a married couple who endured years without a child. Their sorrow did not end their trust in God: Joachim withdrew to fast and pray, while Anne carried her grief into a garden and pleaded for a child.",
         "The story continues with an angelic promise and the couple’s joyful reunion at Jerusalem’s gate after learning that their long prayer for a child had been heard. Their daughter would be Mary. Later devotion and sacred art came to know this scene as the Meeting at the Golden Gate. The image of the two embracing at the gate has endured because it gathers longing, perseverance, and gratitude into a single human moment.",
       ],
       sourceIds: ["john-paul-ii-joachim-anne", "usccb-joachim-anne-novena"],
@@ -132,7 +136,7 @@ export const saintsJoachimAndAnne = {
       heading: "Who asks for their prayers",
       paragraphs: [
         "Devotion to Joachim and Anne has made them especially close to married couples, expectant parents, families struggling to conceive, grandparents, and all who have grown old. The USCCB’s novena presents them as intercessors for each of these intentions.",
-        "Their story speaks to people living through long seasons that cannot be hurried: waiting for a child, caring for aging parents, trying to pass on faith, or wondering whether years of quiet love will bear fruit. Their memorial offers no demand for dramatic achievement. It honors faithful love that makes room for another person’s vocation.",
+        "Their intercession gathers intentions across generations: marriage, hoped-for children, pregnancy, grandparenthood, and old age. Their memorial honors family life not as a dramatic achievement, but as the patient work through which faith and love can be handed on.",
       ],
       sourceIds: [
         "usccb-joachim-anne-novena",
@@ -159,7 +163,7 @@ export const saintsJoachimAndAnne = {
       label: "For prayer",
       heading: "A grace to ask for today",
       paragraphs: [
-        "Saints Joachim and Anne, pray for families learning to hand on faith without force, for grandparents and elders who feel forgotten, and for all whose hidden fidelity is bearing fruit they may never live to see.",
+        "In prayer, entrust married couples, those longing for a child, expectant parents, grandparents, and elders to Saints Joachim and Anne, and ask that families may hand on the faith with patience and love.",
       ],
       sourceIds: [],
     },

@@ -150,6 +150,10 @@ export interface ContentEntry {
     description: string;
     url: string;
   }[];
+  scriptureSection: {
+    label: string;
+    heading: string;
+  };
   featuredArtwork?: FeaturedArtwork;
   sections: readonly ContentSection[];
   sources: readonly ContentSource[];

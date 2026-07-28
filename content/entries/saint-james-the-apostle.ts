@@ -7,12 +7,12 @@ export const saintJamesTheApostle = {
   title: "Saint James the Apostle",
   shortTitle: "Saint James",
   alternateNames: ["James the Greater", "James, son of Zebedee"],
-  descriptor: "Apostle · Martyr",
+  descriptor: "Apostle · martyr",
   summary:
     "James, the son of Zebedee and brother of John, followed Jesus from the fishing boat to the Transfiguration, Gethsemane, and ultimately martyrdom.",
   theme: "A faith worth walking for",
   prayerPrompt:
-    "Ask for the courage to follow Christ generously, especially when the road is difficult.",
+    "In prayer, ask for the courage to follow Christ generously, especially when the road is difficult.",
   featuredScripture: {
     text: "Whoever wishes to be great among you shall be your servant.",
     citation: "Matthew 20:26",
@@ -71,6 +71,10 @@ export const saintJamesTheApostle = {
       url: "https://bible.usccb.org/bible/acts/12",
     },
   ],
+  scriptureSection: {
+    label: "In Scripture",
+    heading: "James in the Gospels and Acts",
+  },
   featuredArtwork: {
     id: "saint-james-book-of-hours",
     title: "Manuscript Leaf with Saint James the Greater, from a Book of Hours",
@@ -130,7 +134,7 @@ export const saintJamesTheApostle = {
       heading: "An ambition corrected by the Gospel",
       paragraphs: [
         "James and John asked Jesus for places of honor in his glory. Jesus did not conceal their misunderstanding. He taught them that greatness among his disciples takes the form of service and that following him means sharing his cup.",
-        "This failure is not incidental to James’s story. It makes his later fidelity more instructive: an apostle can be corrected, purified, and taught to receive discipleship as self-gift rather than status.",
+        "The Gospel does not hide James’s need for correction. Christ redirects his desire for honor toward service and teaches him to receive apostleship as self-gift rather than status.",
       ],
       sourceIds: ["usccb-scripture", "benedict-james"],
     },
@@ -158,7 +162,7 @@ export const saintJamesTheApostle = {
       label: "For prayer",
       heading: "A grace to ask for today",
       paragraphs: [
-        "Saint James, pray that we may answer Christ promptly, receive correction without defensiveness, and learn the greatness of serving rather than being served.",
+        "In prayer, ask Saint James to help us answer Christ promptly, accept correction humbly, and choose the greatness of service over the desire for status.",
       ],
       sourceIds: [],
     },

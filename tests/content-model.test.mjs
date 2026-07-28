@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  contentEntries,
   canTransitionEditorialStatus,
   getEntryBySlug,
   isPubliclyVisible,
@@ -20,6 +21,23 @@ import {
   getObservanceForDate,
   isValidDateKey,
 } from "../lib/liturgical-calendar.ts";
+
+test("keeps every section connected to a recorded source", () => {
+  for (const entry of contentEntries) {
+    const sourceIds = new Set(entry.sources.map((source) => source.id));
+    for (const section of entry.sections) {
+      for (const sourceId of section.sourceIds) {
+        assert.equal(
+          sourceIds.has(sourceId),
+          true,
+          `${entry.slug}/${section.id} references the missing source ${sourceId}`,
+        );
+      }
+    }
+    assert.ok(entry.scriptureSection.label);
+    assert.ok(entry.scriptureSection.heading);
+  }
+});
 
 test("requires sequential editorial review", () => {
   assert.equal(canTransitionEditorialStatus("draft", "fact_checked"), true);

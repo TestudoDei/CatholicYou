@@ -19,8 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const title = "Catholic.You — Meet the saints. Keep the feasts.";
-  const description = "A trustworthy companion for the Catholic year: saints, solemnities, and timely novena reminders.";
+  const title = "Catholic.You — Meet the saints · Keep the feasts";
+  const description =
+    "Discover Scripture, tradition, and the lives of the saints through the rhythm of the Church’s calendar";
 
   return {
     title,
@@ -30,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       type: "website",
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Catholic.You — Meet the saints. Keep the feasts." }],
+      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",

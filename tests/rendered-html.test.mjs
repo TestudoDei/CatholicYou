@@ -39,6 +39,7 @@ test("renders the private Saint James homepage preview from structured content",
   assert.match(html, /Transfiguration and in Gethsemane/);
   assert.match(html, /Camino de Santiago/);
   assert.match(html, /every step into prayer/);
+  assert.match(html, /In prayer, ask for the courage to follow Christ generously/);
   assert.match(html, /Manuscript Leaf with Saint James the Greater/);
   assert.match(html, /Look more closely/);
   assert.match(html, /Whoever wishes to be great among you shall be your servant/);
@@ -67,15 +68,18 @@ test("renders the sourced Saint James entry only in preview mode", async () => {
   assert.equal(privateResponse.status, 200);
   const html = await privateResponse.text();
 
-  assert.match(html, /Liturgical color:.*Red/);
+  assert.match(html, /red(?:<!-- -->)? vestments at Mass/);
   assert.match(html, /Called into the company of Jesus/);
   assert.match(html, /An ambition corrected by the Gospel/);
+  assert.match(html, /The Gospel does not hide James.s need for correction/);
   assert.match(html, /Documented history/);
   assert.match(html, /Later traditions connect James/);
-  assert.match(html, /Sources and review status/);
+  assert.match(html, /James in the Gospels and Acts/);
+  assert.match(html, /In prayer, ask Saint James/);
+  assert.match(html, />Sources</);
   assert.match(html, /Awaiting human review/);
-  assert.match(html, /Story arc/);
-  assert.match(html, /Correction and transformation/);
+  assert.doesNotMatch(html, /Story arc|Correction and transformation/);
+  assert.doesNotMatch(html, /Supported by \d+ sources?|Current status/);
   assert.match(html, /General Audience: James, the Greater/);
   assert.match(html, /James dressed for the road/);
   assert.match(html, /View the museum record/);
@@ -91,15 +95,22 @@ test("renders Joachim and Anne through tradition and living devotion", async () 
   const html = await privateResponse.text();
 
   assert.match(html, /Saints Joachim and Anne/);
-  assert.match(html, /Liturgical color:.*White/);
+  assert.match(html, /white(?:<!-- -->)? vestments at Mass/);
   assert.match(html, /The parents of Mary/);
   assert.match(html, /The promise of a long-awaited child/);
   assert.match(html, /Who asks for their prayers/);
   assert.match(html, /A living pilgrimage to Saint Anne/);
   assert.match(html, /Sainte-Anne-de-Beaupré/);
   assert.match(html, /Louis Guimont/);
-  assert.match(html, /Hidden faithfulness/);
-  assert.match(html, /grandparents and elders who feel forgotten/i);
+  assert.match(html, /The memorial readings/);
+  assert.match(html, /Faith handed on through generations/);
+  assert.match(html, /In prayer, entrust married couples/);
+  assert.doesNotMatch(html, /grandparents and elders who feel forgotten/i);
+  assert.doesNotMatch(html, /An ancient Christian story/);
+  assert.doesNotMatch(
+    html,
+    /Supported by \d+ sources?|Current status|Story arc|Hidden faithfulness/,
+  );
   assert.match(html, /The reunion that artists made unforgettable/);
   assert.match(html, /Albrecht Dürer/);
   assert.match(html, /Joachim and Anne at the Golden Gate/);
@@ -147,7 +158,12 @@ test("previews Joachim and Anne only when the memorial is not displaced", async 
 test("keeps CatholicYou metadata and removes starter markers", async () => {
   const response = await render("/");
   const html = await response.text();
-  assert.match(html, /<title>Catholic\.You — Meet the saints\. Keep the feasts\.<\/title>/i);
+  assert.match(html, /<title>Catholic\.You — Meet the saints · Keep the feasts<\/title>/i);
+  assert.match(
+    html,
+    /Discover Scripture, tradition, and the lives of the saints through the rhythm of the Church’s calendar/,
+  );
+  assert.doesNotMatch(html, /A trustworthy companion/);
   assert.match(html, /<meta property="og:image" content="https?:\/\/[^"]+\/og\.png"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

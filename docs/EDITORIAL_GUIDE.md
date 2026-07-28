@@ -36,6 +36,8 @@ Prefer Scripture, Vatican documents, the Roman Missal and liturgical calendars, 
 - Omit terminal periods from display copy, including headings, subheadings, titles, subtitles, kickers, labels, and calls to action. Use normal punctuation in paragraphs, prayers, quotations, captions, and other sentence-level prose.
 - Use sentence case for display copy unless a proper name requires capitalization.
 - Let the italicized prayer panel stand without a heading. Begin its body with natural devotional language such as “In prayer,” and prefer direct, source-grounded intentions over generalized emotional applications.
+- Let story-arc labels, evidence mapping, and review mechanics guide the editors without becoming reader-facing page furniture. A private-preview notice and a clear source list are sufficient.
+- Use a context-specific heading for Scripture on complete entries. Distinguish passages that recount the saint’s life from readings assigned to the observance.
 
 ## Sacred art
 

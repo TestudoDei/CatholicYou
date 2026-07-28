@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { FeaturedArtworkBlock } from "../../../../components/featured-artwork";
 import { SiteFooter, SiteHeader } from "../../../../components/site-chrome";
 import { getEntryBySlug } from "../../../../content";
-import { getStoryArcDefinition } from "../../../../content/story-arcs";
 
 interface SaintPageProps {
   params: Promise<{ slug: string }>;
@@ -43,10 +42,6 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
 
   if (!entry) notFound();
 
-  const storyArc = entry.storyArc
-    ? getStoryArcDefinition(entry.storyArc.primary)
-    : null;
-
   return (
     <main>
       <SiteHeader />
@@ -64,8 +59,8 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
                   {formatMonthDay(entry.observance.month, entry.observance.day)}
                   {" · "}
                   {titleCase(entry.observance.rank)}
-                  {" · Liturgical color: "}
-                  {titleCase(entry.observance.color)}
+                  {" · "}
+                  {entry.observance.color} vestments at Mass
                 </p>
                 <h1>{entry.title}</h1>
                 <p className="saint-deck">{entry.summary}</p>
@@ -76,7 +71,6 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
                   {entry.atAGlance.map((fact) => (
                     <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
                   ))}
-                  {storyArc ? <div><dt>Story arc</dt><dd>{storyArc.label}</dd></div> : null}
                 </dl>
               </aside>
             </div>
@@ -87,25 +81,35 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
           <nav className="article-rail" aria-label="On this page">
             <p>On this page</p>
             {entry.sections.map((section) => (
-              <a href={`#${section.id}`} key={section.id}>{section.heading}</a>
+              <a href={`#${section.id}`} key={section.id}>
+                {section.label === "For prayer" ? "Prayer" : section.heading}
+              </a>
             ))}
-            {entry.featuredArtwork ? <a href="#featured-artwork">Featured artwork</a> : null}
+            {entry.featuredArtwork ? <a href="#featured-artwork">Sacred art</a> : null}
             <a href="#sources">Sources</a>
           </nav>
 
           <div className="article-body">
-            {entry.sections.map((section) => (
-              <section id={section.id} key={section.id}>
-                <p className="section-label">{section.label}</p>
-                <h2>{section.heading}</h2>
-                {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                {section.sourceIds.length ? (
-                  <p className="source-marker">
-                    Supported by {section.sourceIds.length} {section.sourceIds.length === 1 ? "source" : "sources"} listed below.
-                  </p>
-                ) : null}
-              </section>
-            ))}
+            {entry.sections.map((section) =>
+              section.label === "For prayer" ? (
+                <aside
+                  className="article-prayer"
+                  id={section.id}
+                  key={section.id}
+                  aria-label="Prayer"
+                >
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </aside>
+              ) : (
+                <section id={section.id} key={section.id}>
+                  <p className="section-label">{section.label}</p>
+                  <h2>{section.heading}</h2>
+                  {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </section>
+              ),
+            )}
 
             {entry.featuredArtwork ? (
               <FeaturedArtworkBlock
@@ -115,8 +119,8 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
             ) : null}
 
             <section className="scripture-ledger" id="scripture">
-              <p className="section-label">Read in Scripture</p>
-              <h2>The biblical witness</h2>
+              <p className="section-label">{entry.scriptureSection.label}</p>
+              <h2>{entry.scriptureSection.heading}</h2>
               <div>
                 {entry.scriptureReferences.map((reference) => (
                   <a href={reference.url} target="_blank" rel="noreferrer" key={reference.citation}>
@@ -129,12 +133,7 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
             </section>
 
             <section className="sources-section" id="sources">
-              <p className="section-label">Editorial record</p>
-              <h2>Sources and review status</h2>
-              <p>
-                These sources support this entry; they do not imply endorsement of
-                CatholicYou. Links open the original publisher.
-              </p>
+              <h2>Sources</h2>
               <ol>
                 {entry.sources.map((source) => (
                   <li key={source.id}>
@@ -144,17 +143,6 @@ export default async function SaintPreviewPage({ params }: SaintPageProps) {
                   </li>
                 ))}
               </ol>
-              <div className="review-card">
-                <div>
-                  <span>Current status</span>
-                  <strong>{entry.editorial.status.replace("_", " ")}</strong>
-                </div>
-                <p>
-                  This entry has been checked against its listed sources. It remains
-                  a private preview and cannot be published until a human reviewer
-                  is recorded.
-                </p>
-              </div>
             </section>
           </div>
         </div>

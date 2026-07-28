@@ -59,6 +59,8 @@ Every saint entry names one primary story arc and may name one distinct secondar
 
 The arc guides the order and emphasis of the complete story without replacing editorial judgment. All complete stories still require historical grounding, proportionate treatment of Scripture and tradition when relevant, spiritual movement, enduring relevance, an invitation to prayer, and a reviewable source record.
 
+On the reader-facing page, the story arc remains structural rather than promotional: do not display the arc assignment or repeat per-section source counts. End with an untitled, italicized prayer panel, then present sacred art, relevant Scripture, and the source list without additional quality claims. Give the Scripture collection an entry-specific label and heading so proper memorial readings are not presented as biography.
+
 See [Editorial story arcs](./EDITORIAL_STORY_ARCS.md) for the available arcs, section sequences, and selection rules.
 
 ## Calendar scope
